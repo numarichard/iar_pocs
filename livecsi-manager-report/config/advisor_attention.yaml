@@ -1,0 +1,42 @@
+# Field naming follows numa-metrics-registry conventions where they fit:
+#   schema_version, id, display_name, description, grain.
+# `columns` is local to table-view specs (not the registry's `dimensions`,
+# which are pivot/peer-group axes — different concept).
+
+schema_version: 1
+viz_type: table
+id: advisor_attention
+display_name: "LiveCSI Manager Report"
+description: "Per-advisor signal for service manager weekly review (POC, mock data)"
+grain: service_advisor
+
+source:
+  type: csv
+  path: fixtures/advisor_attention.csv
+
+columns:
+  - id: advisor_name
+    display_name: "Advisor"
+    type: string
+
+  - id: total_conversations
+    display_name: "Conversations"
+    type: integer
+
+  - id: negative_count
+    display_name: "Negative"
+    type: integer
+
+  - id: open_risks
+    display_name: "Open Risks"
+    type: integer
+
+  - id: last_activity
+    display_name: "Last Activity"
+    type: datetime
+
+sort:
+  - column: open_risks
+    direction: desc
+  - column: negative_count
+    direction: desc

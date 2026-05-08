@@ -130,7 +130,7 @@ def render_platform() -> None:
         df[present],
         column_config=column_config,
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
     )
 
     with st.expander("Active spec (raw)"):
@@ -294,7 +294,7 @@ def render_feature() -> None:
         seed_columns(seed),
         num_rows="dynamic",
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_config={
             "id": st.column_config.TextColumn("ID", help="snake_case", required=True),
             "display_name": st.column_config.TextColumn(
@@ -314,7 +314,7 @@ def render_feature() -> None:
         seed_sort(seed),
         num_rows="dynamic",
         hide_index=True,
-        use_container_width=True,
+        width="stretch",
         column_config={
             "column": st.column_config.SelectboxColumn(
                 "Column", options=valid_col_ids, required=True

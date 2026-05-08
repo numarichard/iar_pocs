@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 viz_type: table
 id: advisor_attention
 display_name: "Advisor Attention"
@@ -7,31 +7,79 @@ grain: service_advisor
 
 source:
   type: csv
-  path: fixtures/advisor_attention.csv
+  path: fixtures/advisor_conversations.csv
+
+# Period filter: windowed on `field`. The renderer uses two windows of equal
+# length (current and the one immediately prior) so trend metrics can compare.
+period:
+  field: started_at
+  default_days: 30
+  options: [7, 14, 30, 90]
+  trend_threshold_pp: 5
 
 columns:
   - id: advisor_name
     display_name: "Advisor"
     type: string
+    aggregation:
+      type: group_key
 
   - id: total_conversations
-    display_name: "Conversations"
+    display_name: "Total Conversations"
     type: integer
+    aggregation:
+      type: count
 
-  - id: negative_count
-    display_name: "Negative"
+  - id: negative_pct
+    display_name: "Negative %"
+    type: percent
+    aggregation:
+      type: pct_where
+      where:
+        column: sentiment
+        equals: negative
+
+  - id: trend
+    display_name: "Trend"
+    type: string
+    aggregation:
+      type: trend_pct_where
+      where:
+        column: sentiment
+        equals: negative
+
+  - id: unresolved_negatives
+    display_name: "Unresolved Negatives"
     type: integer
+    aggregation:
+      type: count_where
+      where:
+        all:
+          - column: sentiment
+            equals: negative
+          - column: resolved
+            equals: false
 
-  - id: open_risks
-    display_name: "Open Risks"
-    type: integer
+  - id: avg_response_time
+    display_name: "Avg Response Time"
+    type: duration_minutes
+    aggregation:
+      type: avg
+      column: response_time_seconds
+      output_unit: minutes
 
-  - id: last_activity
-    display_name: "Last Activity"
-    type: datetime
+  - id: top_issue
+    display_name: "Top Issue"
+    type: string
+    aggregation:
+      type: mode
+      column: issue_category
+      where:
+        column: sentiment
+        equals: negative
 
 sort:
-  - column: open_risks
+  - column: unresolved_negatives
     direction: desc
-  - column: negative_count
+  - column: negative_pct
     direction: desc

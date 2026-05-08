@@ -1,0 +1,933 @@
+conversation_id,advisor_name,started_at,sentiment,resolved,response_time_seconds,issue_category
+c_00023,Sarah M,2026-05-08T14:20:06,positive,true,926,Parts backlog
+c_00541,Alex P,2026-05-08T13:48:53,positive,true,631,Parts backlog
+c_00499,Alex P,2026-05-08T05:01:48,negative,true,489,Parts backlog
+c_00629,Riley N,2026-05-08T04:14:24,negative,false,349,Pricing
+c_00362,John D,2026-05-08T00:48:48,neutral,true,335,Communication
+c_00210,John D,2026-05-07T12:32:42,positive,true,538,Repair delays
+c_00416,Alex P,2026-05-07T09:27:43,positive,true,731,Parts backlog
+c_00345,John D,2026-05-07T09:10:10,positive,true,344,Parts backlog
+c_00742,Riley N,2026-05-07T07:50:46,positive,false,384,Parts backlog
+c_00218,John D,2026-05-07T04:58:34,positive,true,275,Scheduling
+c_00685,Riley N,2026-05-06T23:58:19,positive,true,576,Service quality
+c_00593,Alex P,2026-05-06T23:31:57,positive,true,904,Repair delays
+c_00473,Alex P,2026-05-06T21:43:11,negative,false,787,Pricing
+c_00164,Sarah M,2026-05-06T21:12:18,positive,true,944,Parts backlog
+c_00396,Alex P,2026-05-06T20:57:33,positive,true,527,Repair delays
+c_00634,Riley N,2026-05-06T19:55:26,neutral,true,419,Scheduling
+c_00835,Morgan L,2026-05-06T04:00:52,positive,true,963,Repair delays
+c_00867,Morgan L,2026-05-06T00:59:54,neutral,true,1083,Communication
+c_00191,Sarah M,2026-05-05T19:44:46,neutral,true,1540,Repair delays
+c_00378,John D,2026-05-05T17:32:24,positive,true,356,Pricing
+c_00468,Alex P,2026-05-05T13:07:25,neutral,true,1264,Pricing
+c_00615,Alex P,2026-05-05T05:30:18,positive,true,1068,Service quality
+c_00870,Morgan L,2026-05-05T03:18:12,neutral,true,717,Pricing
+c_00258,John D,2026-05-05T00:26:08,neutral,true,339,Repair delays
+c_00135,Sarah M,2026-05-04T16:19:10,neutral,true,444,Repair delays
+c_00875,Morgan L,2026-05-04T12:51:24,negative,true,1314,Communication
+c_00868,Morgan L,2026-05-04T06:59:10,neutral,true,337,Scheduling
+c_00922,Morgan L,2026-05-04T01:12:49,neutral,true,807,Communication
+c_00533,Alex P,2026-05-03T15:32:16,positive,true,656,Parts backlog
+c_00888,Morgan L,2026-05-03T15:26:15,neutral,true,393,Service quality
+c_00288,John D,2026-05-03T14:30:28,positive,true,422,Repair delays
+c_00319,John D,2026-05-03T12:48:55,positive,true,600,Scheduling
+c_00796,Morgan L,2026-05-03T03:50:54,negative,false,1133,Scheduling
+c_00878,Morgan L,2026-05-02T23:40:45,neutral,true,589,Pricing
+c_00395,Alex P,2026-05-02T13:20:23,positive,true,468,Repair delays
+c_00671,Riley N,2026-05-02T10:26:29,positive,true,421,Service quality
+c_00912,Morgan L,2026-05-02T09:51:20,neutral,true,786,Communication
+c_00773,Morgan L,2026-05-02T09:14:50,positive,true,459,Pricing
+c_00184,Sarah M,2026-05-02T08:31:52,positive,true,1109,Service quality
+c_00399,Alex P,2026-05-02T07:40:00,neutral,false,428,Pricing
+c_00846,Morgan L,2026-05-01T23:27:34,positive,true,923,Parts backlog
+c_00755,Riley N,2026-05-01T16:56:35,neutral,true,527,Repair delays
+c_00338,John D,2026-05-01T15:38:39,positive,true,643,Parts backlog
+c_00139,Sarah M,2026-05-01T13:58:45,positive,true,1922,Communication
+c_00426,Alex P,2026-05-01T13:39:43,positive,true,326,Repair delays
+c_00337,John D,2026-05-01T11:10:40,positive,true,293,Pricing
+c_00621,Alex P,2026-05-01T10:52:26,positive,true,581,Scheduling
+c_00339,John D,2026-05-01T10:23:42,negative,true,240,Pricing
+c_00245,John D,2026-05-01T09:05:03,neutral,true,134,Scheduling
+c_00751,Riley N,2026-05-01T09:02:51,neutral,true,712,Service quality
+c_00693,Riley N,2026-05-01T08:26:14,positive,true,704,Scheduling
+c_00235,John D,2026-05-01T02:35:05,positive,true,221,Scheduling
+c_00729,Riley N,2026-05-01T02:21:27,positive,true,492,Pricing
+c_00097,Sarah M,2026-04-30T21:23:01,neutral,true,1079,Repair delays
+c_00678,Riley N,2026-04-30T19:37:51,positive,true,420,Parts backlog
+c_00770,Morgan L,2026-04-30T12:02:23,positive,true,1117,Scheduling
+c_00194,Sarah M,2026-04-30T06:54:16,neutral,true,915,Repair delays
+c_00467,Alex P,2026-04-29T07:23:48,negative,true,548,Scheduling
+c_00388,Alex P,2026-04-29T06:54:24,positive,true,703,Repair delays
+c_00622,Alex P,2026-04-29T06:34:07,positive,true,698,Repair delays
+c_00366,John D,2026-04-29T06:09:07,positive,true,165,Repair delays
+c_00749,Riley N,2026-04-28T14:24:59,neutral,false,453,Repair delays
+c_00237,John D,2026-04-28T12:57:33,positive,true,419,Repair delays
+c_00669,Riley N,2026-04-28T09:41:58,positive,true,534,Pricing
+c_00122,Sarah M,2026-04-28T07:09:49,negative,true,1224,Repair delays
+c_00607,Alex P,2026-04-28T06:50:51,positive,true,1110,Repair delays
+c_00536,Alex P,2026-04-27T20:26:49,neutral,true,896,Pricing
+c_00929,Morgan L,2026-04-27T19:55:03,positive,true,1081,Parts backlog
+c_00812,Morgan L,2026-04-27T19:50:33,positive,true,932,Parts backlog
+c_00230,John D,2026-04-27T19:13:09,positive,true,471,Parts backlog
+c_00587,Alex P,2026-04-27T12:26:11,positive,true,1094,Service quality
+c_00837,Morgan L,2026-04-27T09:18:08,positive,false,625,Repair delays
+c_00534,Alex P,2026-04-27T07:56:43,positive,true,509,Pricing
+c_00203,Sarah M,2026-04-27T01:28:07,positive,true,423,Repair delays
+c_00125,Sarah M,2026-04-27T00:18:24,neutral,true,878,Pricing
+c_00195,Sarah M,2026-04-26T21:32:00,neutral,true,1569,Repair delays
+c_00268,John D,2026-04-26T10:55:49,neutral,false,423,Repair delays
+c_00696,Riley N,2026-04-26T10:17:30,positive,true,910,Repair delays
+c_00087,Sarah M,2026-04-26T05:40:19,positive,true,1219,Repair delays
+c_00289,John D,2026-04-25T22:35:30,neutral,true,353,Scheduling
+c_00931,Morgan L,2026-04-25T20:25:30,positive,false,241,Communication
+c_00832,Morgan L,2026-04-25T18:14:58,negative,true,746,Pricing
+c_00265,John D,2026-04-25T14:08:59,neutral,true,502,Scheduling
+c_00229,John D,2026-04-25T10:45:47,positive,true,341,Scheduling
+c_00757,Riley N,2026-04-25T09:13:15,positive,true,428,Scheduling
+c_00104,Sarah M,2026-04-25T07:38:18,positive,true,1154,Parts backlog
+c_00064,Sarah M,2026-04-25T05:28:34,positive,true,260,Scheduling
+c_00694,Riley N,2026-04-25T00:42:58,positive,true,346,Communication
+c_00010,Sarah M,2026-04-24T20:14:25,positive,true,1262,Service quality
+c_00078,Sarah M,2026-04-24T13:35:46,neutral,true,1009,Communication
+c_00301,John D,2026-04-24T12:55:16,positive,true,245,Communication
+c_00407,Alex P,2026-04-24T10:26:03,positive,true,830,Service quality
+c_00677,Riley N,2026-04-24T05:56:58,positive,true,724,Communication
+c_00036,Sarah M,2026-04-24T01:40:52,neutral,true,2381,Repair delays
+c_00766,Morgan L,2026-04-23T22:40:49,positive,true,781,Pricing
+c_00712,Riley N,2026-04-23T20:39:35,neutral,true,316,Scheduling
+c_00231,John D,2026-04-23T19:24:28,neutral,true,386,Scheduling
+c_00550,Alex P,2026-04-23T14:23:42,neutral,true,737,Service quality
+c_00853,Morgan L,2026-04-23T11:16:08,neutral,true,821,Communication
+c_00769,Morgan L,2026-04-23T11:13:18,neutral,true,1047,Scheduling
+c_00298,John D,2026-04-22T22:28:27,negative,true,205,Communication
+c_00512,Alex P,2026-04-22T05:19:34,positive,true,406,Repair delays
+c_00478,Alex P,2026-04-21T21:00:17,positive,true,632,Communication
+c_00574,Alex P,2026-04-21T19:25:22,positive,true,616,Repair delays
+c_00879,Morgan L,2026-04-21T15:50:45,positive,true,920,Service quality
+c_00810,Morgan L,2026-04-21T04:39:06,positive,true,557,Parts backlog
+c_00159,Sarah M,2026-04-21T03:48:07,positive,true,484,Repair delays
+c_00202,Sarah M,2026-04-20T23:51:43,positive,true,1033,Scheduling
+c_00211,John D,2026-04-20T21:22:42,positive,true,443,Parts backlog
+c_00683,Riley N,2026-04-20T20:30:10,neutral,true,729,Parts backlog
+c_00525,Alex P,2026-04-20T20:20:55,neutral,true,987,Repair delays
+c_00053,Sarah M,2026-04-20T18:51:29,neutral,false,1866,Parts backlog
+c_00915,Morgan L,2026-04-20T15:00:01,positive,true,493,Repair delays
+c_00464,Alex P,2026-04-20T14:55:43,positive,true,605,Scheduling
+c_00037,Sarah M,2026-04-20T14:21:51,neutral,true,1508,Communication
+c_00470,Alex P,2026-04-20T14:00:15,positive,true,778,Communication
+c_00472,Alex P,2026-04-20T05:24:43,negative,true,775,Parts backlog
+c_00643,Riley N,2026-04-20T05:08:23,neutral,true,384,Service quality
+c_00181,Sarah M,2026-04-19T20:03:09,negative,true,1356,Repair delays
+c_00653,Riley N,2026-04-19T18:54:39,positive,true,301,Service quality
+c_00582,Alex P,2026-04-19T15:16:26,positive,true,643,Parts backlog
+c_00034,Sarah M,2026-04-19T14:20:23,negative,true,1134,Repair delays
+c_00256,John D,2026-04-19T11:14:22,positive,true,424,Communication
+c_00535,Alex P,2026-04-19T06:20:25,positive,true,572,Service quality
+c_00748,Riley N,2026-04-19T05:40:04,positive,true,275,Service quality
+c_00453,Alex P,2026-04-18T19:42:18,neutral,true,720,Repair delays
+c_00649,Riley N,2026-04-18T18:38:51,positive,true,503,Repair delays
+c_00226,John D,2026-04-18T17:53:47,positive,true,371,Pricing
+c_00638,Riley N,2026-04-18T13:39:43,positive,true,490,Communication
+c_00794,Morgan L,2026-04-18T12:39:31,positive,true,875,Pricing
+c_00432,Alex P,2026-04-18T09:45:53,neutral,true,849,Parts backlog
+c_00138,Sarah M,2026-04-18T09:31:46,positive,true,873,Scheduling
+c_00918,Morgan L,2026-04-17T11:36:53,neutral,true,1048,Scheduling
+c_00427,Alex P,2026-04-17T11:18:06,neutral,true,581,Service quality
+c_00322,John D,2026-04-17T08:51:00,positive,true,290,Scheduling
+c_00543,Alex P,2026-04-17T04:04:22,neutral,true,703,Parts backlog
+c_00000,Sarah M,2026-04-17T02:09:35,negative,false,1178,Parts backlog
+c_00055,Sarah M,2026-04-16T23:37:48,negative,true,958,Scheduling
+c_00866,Morgan L,2026-04-16T21:18:36,positive,true,991,Parts backlog
+c_00364,John D,2026-04-16T19:06:22,negative,true,148,Scheduling
+c_00818,Morgan L,2026-04-16T18:42:55,positive,false,807,Communication
+c_00727,Riley N,2026-04-16T16:48:13,positive,true,628,Pricing
+c_00636,Riley N,2026-04-16T14:30:16,neutral,true,275,Communication
+c_00121,Sarah M,2026-04-16T13:18:56,positive,true,1020,Service quality
+c_00100,Sarah M,2026-04-16T11:14:18,positive,true,351,Scheduling
+c_00435,Alex P,2026-04-16T08:39:50,negative,false,686,Pricing
+c_00563,Alex P,2026-04-16T06:41:22,positive,true,156,Service quality
+c_00444,Alex P,2026-04-15T19:43:30,positive,true,810,Scheduling
+c_00495,Alex P,2026-04-15T18:48:57,positive,true,959,Parts backlog
+c_00347,John D,2026-04-15T18:01:57,positive,true,428,Service quality
+c_00884,Morgan L,2026-04-15T17:16:31,neutral,true,926,Communication
+c_00747,Riley N,2026-04-15T14:01:13,positive,true,360,Pricing
+c_00522,Alex P,2026-04-15T02:59:13,negative,true,786,Scheduling
+c_00177,Sarah M,2026-04-14T17:02:06,neutral,true,1021,Scheduling
+c_00572,Alex P,2026-04-14T04:55:51,negative,false,594,Scheduling
+c_00119,Sarah M,2026-04-14T04:29:42,neutral,true,1114,Repair delays
+c_00460,Alex P,2026-04-14T01:39:30,positive,true,580,Service quality
+c_00241,John D,2026-04-13T21:26:17,neutral,true,297,Service quality
+c_00737,Riley N,2026-04-13T09:37:25,positive,false,538,Service quality
+c_00860,Morgan L,2026-04-13T09:24:28,positive,true,472,Scheduling
+c_00640,Riley N,2026-04-13T08:06:08,positive,true,479,Service quality
+c_00054,Sarah M,2026-04-13T07:20:11,positive,true,719,Repair delays
+c_00046,Sarah M,2026-04-13T07:03:47,positive,true,1081,Communication
+c_00469,Alex P,2026-04-13T02:14:26,positive,true,662,Parts backlog
+c_00048,Sarah M,2026-04-12T23:42:28,neutral,true,936,Scheduling
+c_00459,Alex P,2026-04-12T09:06:36,neutral,true,627,Parts backlog
+c_00586,Alex P,2026-04-12T08:49:34,positive,true,885,Pricing
+c_00515,Alex P,2026-04-12T06:40:23,positive,true,753,Pricing
+c_00807,Morgan L,2026-04-12T04:17:10,positive,true,964,Parts backlog
+c_00171,Sarah M,2026-04-12T03:33:46,neutral,true,1684,Parts backlog
+c_00493,Alex P,2026-04-12T01:32:49,positive,true,535,Scheduling
+c_00445,Alex P,2026-04-11T22:29:31,positive,true,844,Scheduling
+c_00324,John D,2026-04-11T21:29:21,positive,true,244,Pricing
+c_00251,John D,2026-04-11T20:00:58,positive,true,428,Parts backlog
+c_00257,John D,2026-04-11T18:10:46,positive,true,435,Repair delays
+c_00711,Riley N,2026-04-11T12:32:42,positive,true,759,Service quality
+c_00367,John D,2026-04-11T11:55:16,positive,true,310,Service quality
+c_00278,John D,2026-04-10T23:35:59,neutral,true,421,Service quality
+c_00476,Alex P,2026-04-10T23:15:24,positive,true,774,Pricing
+c_00163,Sarah M,2026-04-10T22:01:24,negative,true,897,Repair delays
+c_00155,Sarah M,2026-04-10T17:11:14,neutral,true,1015,Communication
+c_00373,John D,2026-04-10T16:16:20,neutral,true,277,Communication
+c_00190,Sarah M,2026-04-10T14:42:19,positive,true,1636,Pricing
+c_00750,Riley N,2026-04-10T11:43:14,positive,true,525,Scheduling
+c_00780,Morgan L,2026-04-10T09:19:09,neutral,true,970,Pricing
+c_00718,Riley N,2026-04-10T07:39:47,positive,true,580,Repair delays
+c_00077,Sarah M,2026-04-10T02:16:51,negative,false,1388,Repair delays
+c_00321,John D,2026-04-10T00:18:56,positive,true,330,Service quality
+c_00573,Alex P,2026-04-09T23:50:15,positive,true,512,Repair delays
+c_00911,Morgan L,2026-04-09T22:04:35,negative,false,571,Pricing
+c_00726,Riley N,2026-04-09T12:49:45,positive,true,635,Parts backlog
+c_00507,Alex P,2026-04-09T11:18:36,negative,false,359,Parts backlog
+c_00609,Alex P,2026-04-09T10:19:18,positive,true,796,Scheduling
+c_00477,Alex P,2026-04-09T07:32:44,positive,true,851,Pricing
+c_00153,Sarah M,2026-04-09T04:08:17,positive,true,1428,Scheduling
+c_00098,Sarah M,2026-04-09T02:50:49,negative,true,1738,Repair delays
+c_00624,Alex P,2026-04-08T23:22:34,neutral,false,562,Scheduling
+c_00561,Alex P,2026-04-08T21:13:09,negative,false,848,Repair delays
+c_00145,Sarah M,2026-04-08T19:26:34,neutral,true,1650,Parts backlog
+c_00424,Alex P,2026-04-08T18:38:26,neutral,true,933,Communication
+c_00408,Alex P,2026-04-08T18:01:04,positive,true,865,Parts backlog
+c_00059,Sarah M,2026-04-08T16:43:46,positive,true,810,Pricing
+c_00244,John D,2026-04-08T14:54:12,neutral,true,389,Scheduling
+c_00928,Morgan L,2026-04-08T12:50:51,neutral,true,505,Communication
+c_00213,John D,2026-04-08T11:56:43,positive,true,339,Parts backlog
+c_00498,Alex P,2026-04-08T03:52:57,positive,true,630,Scheduling
+c_00212,John D,2026-04-08T03:25:11,neutral,true,313,Repair delays
+c_00905,Morgan L,2026-04-07T05:26:50,positive,true,1138,Communication
+c_00009,Sarah M,2026-04-07T02:58:38,positive,true,1350,Service quality
+c_00804,Morgan L,2026-04-07T00:06:33,positive,true,737,Service quality
+c_00902,Morgan L,2026-04-06T20:43:57,positive,true,503,Scheduling
+c_00436,Alex P,2026-04-06T19:03:16,neutral,true,456,Communication
+c_00619,Alex P,2026-04-06T16:35:14,neutral,true,653,Pricing
+c_00092,Sarah M,2026-04-06T15:50:09,neutral,true,313,Scheduling
+c_00026,Sarah M,2026-04-06T15:27:10,neutral,true,1186,Service quality
+c_00637,Riley N,2026-04-06T07:45:18,neutral,true,770,Pricing
+c_00449,Alex P,2026-04-06T05:32:33,negative,false,892,Communication
+c_00612,Alex P,2026-04-05T23:14:25,positive,true,683,Communication
+c_00864,Morgan L,2026-04-05T20:12:48,positive,true,594,Repair delays
+c_00075,Sarah M,2026-04-05T18:10:51,positive,true,1209,Scheduling
+c_00485,Alex P,2026-04-05T03:49:56,neutral,true,564,Repair delays
+c_00571,Alex P,2026-04-05T03:19:33,positive,true,645,Pricing
+c_00446,Alex P,2026-04-05T01:40:03,positive,true,556,Repair delays
+c_00192,Sarah M,2026-04-04T20:57:14,positive,true,1178,Communication
+c_00370,John D,2026-04-04T16:49:13,positive,true,641,Service quality
+c_00136,Sarah M,2026-04-04T16:33:08,neutral,true,1279,Service quality
+c_00537,Alex P,2026-04-04T12:18:47,positive,true,634,Parts backlog
+c_00611,Alex P,2026-04-04T08:56:22,positive,true,749,Pricing
+c_00542,Alex P,2026-04-04T05:58:38,neutral,true,975,Pricing
+c_00666,Riley N,2026-04-04T04:19:58,neutral,true,665,Communication
+c_00913,Morgan L,2026-04-04T02:18:09,positive,true,683,Service quality
+c_00361,John D,2026-04-04T01:15:10,positive,true,536,Pricing
+c_00840,Morgan L,2026-04-03T23:16:32,positive,true,752,Service quality
+c_00118,Sarah M,2026-04-03T20:44:31,neutral,true,1195,Parts backlog
+c_00162,Sarah M,2026-04-03T17:52:27,positive,true,884,Scheduling
+c_00209,John D,2026-04-03T16:12:01,neutral,true,205,Parts backlog
+c_00274,John D,2026-04-03T16:00:43,positive,true,305,Scheduling
+c_00604,Alex P,2026-04-03T12:50:45,positive,true,612,Pricing
+c_00094,Sarah M,2026-04-03T10:04:53,negative,false,1156,Communication
+c_00109,Sarah M,2026-04-03T09:33:54,positive,true,1139,Parts backlog
+c_00116,Sarah M,2026-04-02T18:08:22,neutral,true,565,Scheduling
+c_00282,John D,2026-04-02T13:57:12,positive,true,353,Communication
+c_00776,Morgan L,2026-04-02T08:48:24,positive,true,546,Communication
+c_00539,Alex P,2026-04-02T03:46:04,neutral,true,559,Scheduling
+c_00233,John D,2026-04-02T03:44:26,positive,true,325,Repair delays
+c_00897,Morgan L,2026-04-01T20:14:00,positive,true,685,Parts backlog
+c_00559,Alex P,2026-04-01T19:36:34,positive,true,752,Scheduling
+c_00068,Sarah M,2026-04-01T19:10:08,neutral,false,1479,Service quality
+c_00767,Morgan L,2026-04-01T18:45:19,positive,true,1027,Parts backlog
+c_00863,Morgan L,2026-04-01T17:15:13,positive,false,497,Parts backlog
+c_00833,Morgan L,2026-04-01T12:00:07,positive,true,774,Service quality
+c_00343,John D,2026-04-01T04:48:12,neutral,true,445,Communication
+c_00890,Morgan L,2026-04-01T04:20:39,positive,true,1244,Pricing
+c_00249,John D,2026-04-01T00:49:09,neutral,true,448,Communication
+c_00384,John D,2026-03-31T14:40:49,positive,true,185,Service quality
+c_00069,Sarah M,2026-03-31T10:45:00,positive,true,878,Parts backlog
+c_00588,Alex P,2026-03-31T01:04:53,neutral,true,578,Repair delays
+c_00284,John D,2026-03-30T20:06:05,neutral,true,464,Repair delays
+c_00027,Sarah M,2026-03-30T15:34:06,positive,true,1515,Parts backlog
+c_00901,Morgan L,2026-03-30T11:55:44,positive,true,1009,Service quality
+c_00882,Morgan L,2026-03-30T10:09:58,positive,true,592,Pricing
+c_00891,Morgan L,2026-03-30T07:43:38,positive,true,454,Communication
+c_00907,Morgan L,2026-03-30T07:38:34,negative,true,634,Repair delays
+c_00382,John D,2026-03-30T06:21:27,positive,true,372,Parts backlog
+c_00142,Sarah M,2026-03-30T04:21:00,positive,true,1383,Repair delays
+c_00052,Sarah M,2026-03-30T04:10:04,neutral,true,1074,Repair delays
+c_00302,John D,2026-03-30T02:11:02,positive,true,209,Parts backlog
+c_00354,John D,2026-03-29T19:45:35,positive,true,321,Pricing
+c_00768,Morgan L,2026-03-29T13:20:31,neutral,true,462,Repair delays
+c_00088,Sarah M,2026-03-29T13:04:55,positive,true,1147,Scheduling
+c_00455,Alex P,2026-03-28T22:53:49,positive,true,570,Service quality
+c_00058,Sarah M,2026-03-28T21:58:21,neutral,true,397,Scheduling
+c_00126,Sarah M,2026-03-28T17:33:05,positive,true,881,Communication
+c_00217,John D,2026-03-28T16:34:42,neutral,true,351,Repair delays
+c_00584,Alex P,2026-03-28T15:50:56,positive,true,428,Repair delays
+c_00924,Morgan L,2026-03-28T11:26:01,negative,false,636,Communication
+c_00592,Alex P,2026-03-28T02:12:11,positive,true,630,Repair delays
+c_00283,John D,2026-03-28T01:01:46,positive,true,452,Communication
+c_00439,Alex P,2026-03-27T23:58:40,neutral,true,739,Repair delays
+c_00656,Riley N,2026-03-27T20:16:49,neutral,true,685,Service quality
+c_00002,Sarah M,2026-03-27T06:04:24,positive,true,961,Communication
+c_00389,Alex P,2026-03-27T05:41:33,positive,true,1033,Service quality
+c_00682,Riley N,2026-03-26T23:54:10,positive,true,661,Communication
+c_00003,Sarah M,2026-03-26T21:40:21,positive,true,533,Pricing
+c_00549,Alex P,2026-03-26T19:33:13,positive,true,725,Parts backlog
+c_00224,John D,2026-03-26T16:23:58,positive,true,468,Parts backlog
+c_00847,Morgan L,2026-03-26T14:55:59,positive,true,711,Service quality
+c_00254,John D,2026-03-26T14:13:41,neutral,true,256,Parts backlog
+c_00063,Sarah M,2026-03-26T10:06:04,negative,false,1683,Repair delays
+c_00594,Alex P,2026-03-26T06:09:22,neutral,true,996,Communication
+c_00287,John D,2026-03-26T03:57:30,positive,true,197,Communication
+c_00620,Alex P,2026-03-26T03:35:13,positive,true,536,Parts backlog
+c_00130,Sarah M,2026-03-26T01:18:44,neutral,true,1275,Parts backlog
+c_00294,John D,2026-03-25T22:13:57,neutral,true,411,Service quality
+c_00675,Riley N,2026-03-25T21:52:05,neutral,true,887,Scheduling
+c_00333,John D,2026-03-25T21:17:39,positive,true,538,Service quality
+c_00207,Sarah M,2026-03-25T19:01:21,neutral,true,1531,Scheduling
+c_00880,Morgan L,2026-03-25T13:06:32,positive,true,594,Communication
+c_00789,Morgan L,2026-03-25T09:25:39,neutral,true,666,Scheduling
+c_00030,Sarah M,2026-03-25T06:03:15,negative,false,870,Repair delays
+c_00012,Sarah M,2026-03-25T05:33:32,neutral,true,1807,Scheduling
+c_00363,John D,2026-03-25T02:41:17,positive,true,236,Service quality
+c_00764,Morgan L,2026-03-25T01:26:53,positive,true,356,Parts backlog
+c_00029,Sarah M,2026-03-25T00:35:16,positive,true,1109,Repair delays
+c_00850,Morgan L,2026-03-24T11:10:07,positive,true,567,Repair delays
+c_00865,Morgan L,2026-03-24T08:51:35,positive,true,767,Repair delays
+c_00706,Riley N,2026-03-24T03:59:52,positive,true,458,Scheduling
+c_00043,Sarah M,2026-03-24T00:52:14,neutral,true,1525,Scheduling
+c_00255,John D,2026-03-23T22:11:41,positive,true,421,Parts backlog
+c_00580,Alex P,2026-03-23T13:48:01,negative,true,633,Parts backlog
+c_00491,Alex P,2026-03-23T08:52:09,negative,false,498,Parts backlog
+c_00151,Sarah M,2026-03-23T08:05:08,positive,true,1167,Repair delays
+c_00805,Morgan L,2026-03-23T04:33:40,neutral,true,815,Service quality
+c_00262,John D,2026-03-22T23:53:22,positive,true,247,Scheduling
+c_00365,John D,2026-03-22T23:24:50,positive,false,173,Scheduling
+c_00308,John D,2026-03-22T23:07:24,positive,true,111,Service quality
+c_00304,John D,2026-03-22T18:25:12,positive,true,441,Communication
+c_00589,Alex P,2026-03-22T17:29:13,positive,true,567,Communication
+c_00261,John D,2026-03-22T17:29:12,positive,false,321,Parts backlog
+c_00102,Sarah M,2026-03-22T13:14:24,negative,true,1367,Repair delays
+c_00819,Morgan L,2026-03-22T12:07:18,negative,false,414,Scheduling
+c_00762,Riley N,2026-03-22T11:15:53,neutral,true,307,Repair delays
+c_00079,Sarah M,2026-03-22T07:57:01,neutral,true,732,Repair delays
+c_00910,Morgan L,2026-03-22T04:33:15,positive,true,789,Pricing
+c_00061,Sarah M,2026-03-21T12:27:25,neutral,true,1803,Repair delays
+c_00519,Alex P,2026-03-21T12:13:00,positive,false,476,Parts backlog
+c_00662,Riley N,2026-03-21T12:07:25,neutral,true,447,Communication
+c_00765,Morgan L,2026-03-21T12:02:09,positive,true,637,Parts backlog
+c_00521,Alex P,2026-03-21T04:36:09,negative,false,417,Communication
+c_00134,Sarah M,2026-03-21T02:12:04,negative,false,752,Pricing
+c_00792,Morgan L,2026-03-20T20:14:24,neutral,true,775,Repair delays
+c_00703,Riley N,2026-03-20T15:08:17,positive,true,629,Repair delays
+c_00845,Morgan L,2026-03-20T08:51:32,positive,true,654,Repair delays
+c_00201,Sarah M,2026-03-20T05:07:39,positive,true,1293,Repair delays
+c_00631,Riley N,2026-03-20T00:27:23,positive,true,518,Parts backlog
+c_00099,Sarah M,2026-03-19T22:49:05,positive,true,1655,Service quality
+c_00524,Alex P,2026-03-19T10:48:31,positive,true,771,Pricing
+c_00084,Sarah M,2026-03-19T09:04:48,neutral,true,1151,Pricing
+c_00601,Alex P,2026-03-19T07:59:10,positive,true,704,Scheduling
+c_00520,Alex P,2026-03-19T04:32:06,positive,true,846,Scheduling
+c_00045,Sarah M,2026-03-19T01:44:38,neutral,true,691,Communication
+c_00744,Riley N,2026-03-18T23:14:25,positive,true,496,Pricing
+c_00441,Alex P,2026-03-18T18:20:41,positive,true,856,Parts backlog
+c_00627,Alex P,2026-03-18T15:21:35,neutral,true,758,Communication
+c_00719,Riley N,2026-03-18T09:00:24,positive,true,744,Parts backlog
+c_00326,John D,2026-03-18T08:58:59,positive,true,279,Parts backlog
+c_00310,John D,2026-03-18T08:28:02,neutral,true,233,Pricing
+c_00564,Alex P,2026-03-18T05:59:24,negative,true,858,Parts backlog
+c_00156,Sarah M,2026-03-18T05:54:16,neutral,true,1500,Scheduling
+c_00560,Alex P,2026-03-18T04:46:36,positive,true,422,Communication
+c_00273,John D,2026-03-17T21:59:30,neutral,true,363,Scheduling
+c_00019,Sarah M,2026-03-17T21:30:17,positive,true,919,Pricing
+c_00887,Morgan L,2026-03-17T21:19:49,positive,true,834,Pricing
+c_00635,Riley N,2026-03-17T14:35:16,positive,true,690,Pricing
+c_00107,Sarah M,2026-03-17T14:11:11,positive,true,1227,Parts backlog
+c_00566,Alex P,2026-03-17T13:24:38,positive,true,952,Scheduling
+c_00413,Alex P,2026-03-17T11:44:49,positive,true,865,Communication
+c_00583,Alex P,2026-03-17T09:24:43,positive,true,246,Communication
+c_00409,Alex P,2026-03-17T07:47:51,negative,false,666,Parts backlog
+c_00779,Morgan L,2026-03-17T06:56:46,positive,true,314,Pricing
+c_00625,Alex P,2026-03-17T06:48:56,neutral,true,712,Repair delays
+c_00106,Sarah M,2026-03-17T06:19:30,neutral,true,423,Scheduling
+c_00502,Alex P,2026-03-17T00:50:47,positive,true,623,Pricing
+c_00332,John D,2026-03-16T23:09:08,positive,true,368,Scheduling
+c_00806,Morgan L,2026-03-16T22:01:01,neutral,true,318,Pricing
+c_00253,John D,2026-03-16T17:42:02,positive,true,395,Repair delays
+c_00405,Alex P,2026-03-16T15:12:14,positive,true,618,Scheduling
+c_00886,Morgan L,2026-03-16T13:01:03,positive,true,1411,Scheduling
+c_00085,Sarah M,2026-03-16T09:17:00,neutral,true,671,Parts backlog
+c_00771,Morgan L,2026-03-16T08:39:05,neutral,true,424,Parts backlog
+c_00528,Alex P,2026-03-16T07:29:32,neutral,false,527,Parts backlog
+c_00197,Sarah M,2026-03-16T07:19:58,positive,true,1263,Communication
+c_00186,Sarah M,2026-03-16T03:17:58,positive,true,570,Service quality
+c_00756,Riley N,2026-03-16T03:02:28,positive,true,353,Service quality
+c_00848,Morgan L,2026-03-16T02:56:48,positive,true,623,Communication
+c_00414,Alex P,2026-03-16T02:55:29,positive,true,658,Service quality
+c_00778,Morgan L,2026-03-15T09:49:55,positive,true,547,Service quality
+c_00312,John D,2026-03-15T09:24:26,positive,true,397,Parts backlog
+c_00250,John D,2026-03-14T23:50:55,positive,true,402,Scheduling
+c_00809,Morgan L,2026-03-14T22:15:04,neutral,true,686,Pricing
+c_00504,Alex P,2026-03-14T21:21:17,positive,true,438,Parts backlog
+c_00128,Sarah M,2026-03-14T19:26:13,positive,true,1642,Service quality
+c_00117,Sarah M,2026-03-14T18:07:50,neutral,true,755,Parts backlog
+c_00380,John D,2026-03-14T17:50:55,positive,true,349,Communication
+c_00731,Riley N,2026-03-14T16:00:21,positive,true,573,Communication
+c_00795,Morgan L,2026-03-14T12:38:50,positive,true,583,Pricing
+c_00786,Morgan L,2026-03-14T10:37:38,neutral,true,677,Communication
+c_00591,Alex P,2026-03-14T08:28:50,negative,false,1111,Scheduling
+c_00336,John D,2026-03-14T06:52:06,neutral,true,227,Service quality
+c_00577,Alex P,2026-03-14T03:42:39,neutral,true,519,Parts backlog
+c_00670,Riley N,2026-03-14T01:16:30,positive,true,566,Scheduling
+c_00919,Morgan L,2026-03-13T22:36:37,neutral,true,921,Scheduling
+c_00673,Riley N,2026-03-13T20:30:25,positive,true,854,Communication
+c_00259,John D,2026-03-13T18:20:58,positive,true,214,Service quality
+c_00327,John D,2026-03-13T14:08:36,neutral,true,329,Communication
+c_00008,Sarah M,2026-03-13T12:21:16,neutral,true,791,Parts backlog
+c_00221,John D,2026-03-13T11:45:41,positive,true,276,Scheduling
+c_00300,John D,2026-03-13T11:01:57,positive,true,403,Communication
+c_00858,Morgan L,2026-03-13T10:30:48,positive,true,327,Scheduling
+c_00697,Riley N,2026-03-13T10:15:49,positive,true,721,Communication
+c_00330,John D,2026-03-13T07:23:34,negative,true,599,Parts backlog
+c_00665,Riley N,2026-03-13T06:48:06,neutral,true,450,Service quality
+c_00715,Riley N,2026-03-13T04:50:45,positive,true,684,Parts backlog
+c_00419,Alex P,2026-03-13T02:45:12,positive,true,1230,Pricing
+c_00654,Riley N,2026-03-13T00:15:29,positive,true,707,Service quality
+c_00450,Alex P,2026-03-12T23:45:45,negative,false,559,Parts backlog
+c_00458,Alex P,2026-03-12T21:13:25,positive,true,1020,Repair delays
+c_00547,Alex P,2026-03-12T12:27:01,negative,true,843,Service quality
+c_00555,Alex P,2026-03-12T10:37:35,negative,false,919,Pricing
+c_00628,Riley N,2026-03-12T08:33:50,positive,true,461,Pricing
+c_00482,Alex P,2026-03-12T07:40:28,neutral,true,675,Pricing
+c_00167,Sarah M,2026-03-12T06:08:06,positive,true,1547,Service quality
+c_00443,Alex P,2026-03-11T22:48:24,positive,true,872,Parts backlog
+c_00617,Alex P,2026-03-11T19:16:37,positive,true,742,Scheduling
+c_00599,Alex P,2026-03-11T16:31:57,positive,true,291,Repair delays
+c_00817,Morgan L,2026-03-11T16:25:49,neutral,true,682,Pricing
+c_00569,Alex P,2026-03-11T16:14:54,negative,true,738,Parts backlog
+c_00372,John D,2026-03-11T11:25:06,neutral,true,419,Service quality
+c_00286,John D,2026-03-11T11:06:03,neutral,true,221,Scheduling
+c_00418,Alex P,2026-03-11T08:52:13,neutral,true,416,Parts backlog
+c_00481,Alex P,2026-03-11T03:12:44,positive,true,639,Communication
+c_00346,John D,2026-03-11T01:49:50,positive,true,304,Service quality
+c_00166,Sarah M,2026-03-11T01:00:40,positive,true,1117,Scheduling
+c_00180,Sarah M,2026-03-11T00:41:31,positive,false,2241,Repair delays
+c_00049,Sarah M,2026-03-10T23:10:05,neutral,true,1234,Repair delays
+c_00581,Alex P,2026-03-10T20:39:42,neutral,true,890,Service quality
+c_00073,Sarah M,2026-03-10T16:50:25,positive,true,1510,Service quality
+c_00838,Morgan L,2026-03-10T16:42:08,negative,false,609,Parts backlog
+c_00518,Alex P,2026-03-10T15:15:20,neutral,false,769,Repair delays
+c_00471,Alex P,2026-03-10T09:13:26,neutral,true,577,Repair delays
+c_00707,Riley N,2026-03-10T08:26:57,positive,true,719,Parts backlog
+c_00509,Alex P,2026-03-09T23:53:48,negative,true,1008,Parts backlog
+c_00024,Sarah M,2026-03-09T23:52:50,positive,true,1594,Repair delays
+c_00906,Morgan L,2026-03-09T21:19:34,neutral,true,635,Pricing
+c_00356,John D,2026-03-09T20:49:33,positive,true,355,Repair delays
+c_00540,Alex P,2026-03-09T16:42:30,positive,true,621,Communication
+c_00348,John D,2026-03-09T07:44:16,positive,true,302,Pricing
+c_00433,Alex P,2026-03-09T03:29:09,neutral,true,321,Parts backlog
+c_00674,Riley N,2026-03-08T23:55:37,positive,true,645,Communication
+c_00633,Riley N,2026-03-08T23:40:46,positive,true,289,Repair delays
+c_00475,Alex P,2026-03-08T20:40:35,positive,true,891,Pricing
+c_00041,Sarah M,2026-03-08T19:29:45,negative,true,865,Repair delays
+c_00070,Sarah M,2026-03-08T18:02:50,positive,true,546,Parts backlog
+c_00641,Riley N,2026-03-08T16:32:43,negative,true,563,Communication
+c_00281,John D,2026-03-08T15:51:28,positive,true,293,Service quality
+c_00479,Alex P,2026-03-08T15:18:25,positive,true,438,Pricing
+c_00013,Sarah M,2026-03-08T14:29:42,positive,true,1401,Service quality
+c_00843,Morgan L,2026-03-08T12:16:17,neutral,true,717,Communication
+c_00874,Morgan L,2026-03-08T10:52:08,positive,true,917,Scheduling
+c_00115,Sarah M,2026-03-08T10:26:24,negative,true,1262,Communication
+c_00269,John D,2026-03-08T10:13:01,positive,true,562,Scheduling
+c_00695,Riley N,2026-03-08T06:26:58,negative,true,704,Communication
+c_00152,Sarah M,2026-03-07T22:11:28,neutral,true,678,Service quality
+c_00316,John D,2026-03-07T20:32:33,neutral,true,326,Scheduling
+c_00285,John D,2026-03-07T15:36:47,neutral,true,282,Parts backlog
+c_00086,Sarah M,2026-03-07T15:02:44,positive,true,926,Pricing
+c_00074,Sarah M,2026-03-07T03:12:36,positive,true,316,Service quality
+c_00831,Morgan L,2026-03-07T01:34:30,positive,true,581,Service quality
+c_00466,Alex P,2026-03-07T00:20:22,positive,true,406,Parts backlog
+c_00816,Morgan L,2026-03-06T23:25:00,neutral,true,603,Communication
+c_00826,Morgan L,2026-03-06T20:32:17,positive,true,982,Repair delays
+c_00411,Alex P,2026-03-06T17:02:43,positive,true,744,Repair delays
+c_00851,Morgan L,2026-03-06T15:49:32,positive,true,649,Service quality
+c_00420,Alex P,2026-03-06T10:15:37,neutral,true,893,Scheduling
+c_00179,Sarah M,2026-03-06T00:22:48,positive,true,1160,Communication
+c_00189,Sarah M,2026-03-05T21:48:06,neutral,true,739,Parts backlog
+c_00065,Sarah M,2026-03-05T09:43:48,positive,true,1678,Pricing
+c_00402,Alex P,2026-03-05T07:01:37,neutral,true,623,Service quality
+c_00271,John D,2026-03-05T06:07:08,neutral,true,523,Communication
+c_00652,Riley N,2026-03-05T05:53:44,positive,true,382,Repair delays
+c_00154,Sarah M,2026-03-05T05:47:34,neutral,true,687,Service quality
+c_00266,John D,2026-03-05T03:21:04,positive,true,218,Service quality
+c_00239,John D,2026-03-04T23:25:14,neutral,true,142,Parts backlog
+c_00340,John D,2026-03-04T15:35:27,neutral,true,76,Scheduling
+c_00076,Sarah M,2026-03-04T14:54:35,negative,true,1109,Communication
+c_00605,Alex P,2026-03-04T12:50:22,positive,true,356,Parts backlog
+c_00551,Alex P,2026-03-04T12:17:39,positive,true,591,Repair delays
+c_00788,Morgan L,2026-03-04T04:39:24,positive,true,801,Parts backlog
+c_00385,John D,2026-03-04T03:50:12,neutral,true,360,Service quality
+c_00297,John D,2026-03-04T03:34:44,positive,true,507,Repair delays
+c_00618,Alex P,2026-03-04T02:34:27,neutral,true,938,Pricing
+c_00557,Alex P,2026-03-04T02:02:11,positive,true,510,Repair delays
+c_00821,Morgan L,2026-03-03T23:50:20,neutral,true,1002,Repair delays
+c_00175,Sarah M,2026-03-03T22:28:22,positive,true,635,Pricing
+c_00313,John D,2026-03-03T20:44:53,positive,true,399,Scheduling
+c_00148,Sarah M,2026-03-03T17:04:00,positive,true,1017,Scheduling
+c_00404,Alex P,2026-03-03T13:43:22,positive,true,869,Service quality
+c_00651,Riley N,2026-03-03T12:30:16,positive,true,439,Communication
+c_00926,Morgan L,2026-03-03T10:08:23,positive,true,797,Parts backlog
+c_00243,John D,2026-03-03T08:24:43,positive,true,371,Pricing
+c_00556,Alex P,2026-03-03T08:03:30,positive,true,169,Repair delays
+c_00702,Riley N,2026-03-02T22:32:07,neutral,true,611,Scheduling
+c_00801,Morgan L,2026-03-02T22:22:49,positive,true,739,Communication
+c_00616,Alex P,2026-03-02T20:12:50,positive,true,629,Repair delays
+c_00215,John D,2026-03-02T16:22:41,positive,true,559,Communication
+c_00403,Alex P,2026-03-02T13:10:41,negative,false,569,Scheduling
+c_00508,Alex P,2026-03-02T10:32:55,neutral,false,453,Communication
+c_00823,Morgan L,2026-03-02T06:22:56,positive,true,844,Service quality
+c_00328,John D,2026-03-01T23:27:34,neutral,true,323,Scheduling
+c_00552,Alex P,2026-03-01T15:38:22,positive,false,366,Pricing
+c_00225,John D,2026-03-01T12:45:24,neutral,true,454,Pricing
+c_00276,John D,2026-03-01T05:57:17,positive,true,370,Service quality
+c_00724,Riley N,2026-03-01T04:22:34,positive,true,555,Pricing
+c_00920,Morgan L,2026-02-28T23:55:27,positive,true,683,Pricing
+c_00219,John D,2026-02-28T22:27:41,neutral,false,342,Repair delays
+c_00033,Sarah M,2026-02-28T21:51:14,positive,true,1231,Service quality
+c_00822,Morgan L,2026-02-28T16:10:04,neutral,true,842,Scheduling
+c_00849,Morgan L,2026-02-28T15:31:27,positive,true,673,Pricing
+c_00603,Alex P,2026-02-28T02:16:57,neutral,true,344,Scheduling
+c_00639,Riley N,2026-02-28T01:48:29,neutral,true,437,Service quality
+c_00005,Sarah M,2026-02-28T00:02:06,positive,true,1215,Service quality
+c_00447,Alex P,2026-02-27T23:45:23,positive,true,901,Communication
+c_00709,Riley N,2026-02-27T21:40:26,neutral,true,289,Communication
+c_00497,Alex P,2026-02-27T18:42:04,negative,true,615,Pricing
+c_00684,Riley N,2026-02-27T15:33:37,neutral,true,311,Service quality
+c_00784,Morgan L,2026-02-27T14:47:43,positive,true,582,Parts backlog
+c_00484,Alex P,2026-02-27T14:09:38,positive,true,451,Service quality
+c_00007,Sarah M,2026-02-27T11:39:32,neutral,false,862,Pricing
+c_00141,Sarah M,2026-02-27T10:59:10,positive,true,1108,Repair delays
+c_00352,John D,2026-02-27T10:57:38,positive,true,223,Scheduling
+c_00193,Sarah M,2026-02-27T09:46:34,positive,true,1165,Scheduling
+c_00311,John D,2026-02-27T07:31:01,positive,true,451,Scheduling
+c_00829,Morgan L,2026-02-27T00:17:12,positive,true,825,Service quality
+c_00057,Sarah M,2026-02-26T21:36:03,neutral,true,956,Parts backlog
+c_00279,John D,2026-02-26T13:47:09,neutral,false,422,Pricing
+c_00452,Alex P,2026-02-26T11:18:01,neutral,true,502,Communication
+c_00185,Sarah M,2026-02-26T09:05:43,neutral,true,1420,Communication
+c_00318,John D,2026-02-26T04:19:42,positive,true,268,Service quality
+c_00463,Alex P,2026-02-26T01:00:14,positive,true,819,Service quality
+c_00182,Sarah M,2026-02-25T15:57:40,neutral,true,562,Pricing
+c_00375,John D,2026-02-25T15:39:13,neutral,true,402,Parts backlog
+c_00523,Alex P,2026-02-25T10:14:14,neutral,true,646,Scheduling
+c_00394,Alex P,2026-02-25T06:27:14,positive,true,594,Repair delays
+c_00700,Riley N,2026-02-25T06:05:09,positive,true,573,Scheduling
+c_00803,Morgan L,2026-02-25T03:41:36,neutral,true,474,Pricing
+c_00889,Morgan L,2026-02-25T02:13:23,positive,true,715,Pricing
+c_00161,Sarah M,2026-02-24T22:06:51,positive,true,1189,Service quality
+c_00688,Riley N,2026-02-24T21:34:08,positive,true,464,Parts backlog
+c_00462,Alex P,2026-02-24T20:34:13,positive,true,900,Parts backlog
+c_00101,Sarah M,2026-02-24T19:56:35,neutral,true,687,Service quality
+c_00406,Alex P,2026-02-24T19:23:01,neutral,true,946,Pricing
+c_00360,John D,2026-02-24T18:21:54,neutral,true,519,Repair delays
+c_00595,Alex P,2026-02-24T14:29:51,positive,true,589,Parts backlog
+c_00246,John D,2026-02-24T13:21:30,positive,true,176,Service quality
+c_00376,John D,2026-02-24T11:16:12,positive,true,436,Service quality
+c_00824,Morgan L,2026-02-24T08:28:09,positive,true,463,Parts backlog
+c_00904,Morgan L,2026-02-24T04:13:47,positive,true,472,Pricing
+c_00095,Sarah M,2026-02-24T02:08:38,neutral,true,1391,Repair delays
+c_00072,Sarah M,2026-02-24T02:03:18,neutral,true,937,Repair delays
+c_00775,Morgan L,2026-02-24T00:44:15,positive,true,685,Parts backlog
+c_00329,John D,2026-02-23T23:29:49,positive,true,512,Pricing
+c_00157,Sarah M,2026-02-23T22:01:41,positive,true,514,Communication
+c_00089,Sarah M,2026-02-23T20:17:46,neutral,true,1056,Communication
+c_00178,Sarah M,2026-02-23T17:17:33,neutral,true,1088,Scheduling
+c_00371,John D,2026-02-23T16:41:27,positive,true,310,Pricing
+c_00739,Riley N,2026-02-23T16:18:33,neutral,true,515,Service quality
+c_00698,Riley N,2026-02-23T15:29:03,neutral,true,444,Communication
+c_00813,Morgan L,2026-02-23T14:43:14,positive,true,1183,Pricing
+c_00855,Morgan L,2026-02-23T10:28:54,negative,true,252,Communication
+c_00527,Alex P,2026-02-23T09:21:06,positive,true,817,Pricing
+c_00530,Alex P,2026-02-23T08:01:10,negative,false,879,Parts backlog
+c_00578,Alex P,2026-02-23T07:53:17,positive,true,774,Scheduling
+c_00903,Morgan L,2026-02-23T03:01:24,neutral,true,791,Pricing
+c_00814,Morgan L,2026-02-22T23:42:43,positive,true,980,Repair delays
+c_00644,Riley N,2026-02-22T23:20:42,neutral,true,519,Pricing
+c_00839,Morgan L,2026-02-22T21:13:38,positive,true,706,Service quality
+c_00687,Riley N,2026-02-22T18:41:17,neutral,false,423,Scheduling
+c_00873,Morgan L,2026-02-22T15:40:17,positive,true,808,Repair delays
+c_00720,Riley N,2026-02-22T08:21:19,positive,false,698,Service quality
+c_00872,Morgan L,2026-02-22T05:46:57,neutral,true,646,Parts backlog
+c_00490,Alex P,2026-02-21T20:03:34,neutral,true,531,Communication
+c_00240,John D,2026-02-21T14:20:37,neutral,true,199,Parts backlog
+c_00461,Alex P,2026-02-21T10:52:55,positive,true,822,Communication
+c_00514,Alex P,2026-02-21T09:42:29,neutral,true,646,Pricing
+c_00790,Morgan L,2026-02-20T22:02:41,positive,true,511,Communication
+c_00544,Alex P,2026-02-20T21:23:28,positive,true,1045,Communication
+c_00168,Sarah M,2026-02-20T20:24:42,positive,true,1076,Scheduling
+c_00176,Sarah M,2026-02-20T12:55:42,neutral,true,1095,Scheduling
+c_00465,Alex P,2026-02-20T11:30:35,positive,true,727,Parts backlog
+c_00772,Morgan L,2026-02-20T10:44:50,positive,true,803,Scheduling
+c_00303,John D,2026-02-20T06:50:46,positive,true,683,Parts backlog
+c_00859,Morgan L,2026-02-20T04:38:02,positive,true,779,Service quality
+c_00223,John D,2026-02-19T22:46:07,positive,true,285,Parts backlog
+c_00488,Alex P,2026-02-19T14:15:05,negative,true,515,Parts backlog
+c_00071,Sarah M,2026-02-19T13:40:42,positive,true,1056,Service quality
+c_00647,Riley N,2026-02-19T09:35:35,positive,true,530,Scheduling
+c_00713,Riley N,2026-02-19T00:56:12,positive,false,297,Parts backlog
+c_00277,John D,2026-02-18T19:55:24,neutral,true,320,Repair delays
+c_00111,Sarah M,2026-02-18T18:54:28,neutral,true,1031,Service quality
+c_00743,Riley N,2026-02-18T07:38:38,positive,true,313,Parts backlog
+c_00655,Riley N,2026-02-18T05:56:23,positive,true,413,Communication
+c_00290,John D,2026-02-17T22:33:22,neutral,true,529,Communication
+c_00204,Sarah M,2026-02-17T22:29:35,neutral,true,1468,Parts backlog
+c_00728,Riley N,2026-02-17T22:04:16,negative,false,444,Communication
+c_00885,Morgan L,2026-02-17T20:25:41,neutral,true,758,Service quality
+c_00060,Sarah M,2026-02-17T15:34:08,negative,true,669,Communication
+c_00745,Riley N,2026-02-17T11:13:02,positive,true,808,Scheduling
+c_00200,Sarah M,2026-02-17T08:29:21,positive,true,1393,Service quality
+c_00567,Alex P,2026-02-17T07:40:57,positive,true,863,Communication
+c_00791,Morgan L,2026-02-17T07:40:17,neutral,true,961,Pricing
+c_00553,Alex P,2026-02-17T07:31:52,positive,true,916,Repair delays
+c_00923,Morgan L,2026-02-17T07:25:43,negative,false,1039,Scheduling
+c_00183,Sarah M,2026-02-17T03:29:53,neutral,true,1368,Parts backlog
+c_00146,Sarah M,2026-02-17T00:40:29,neutral,true,744,Scheduling
+c_00173,Sarah M,2026-02-17T00:36:55,positive,true,1660,Parts backlog
+c_00854,Morgan L,2026-02-16T19:52:06,positive,true,713,Repair delays
+c_00299,John D,2026-02-16T19:33:54,positive,true,279,Scheduling
+c_00623,Alex P,2026-02-16T18:41:07,positive,true,595,Service quality
+c_00090,Sarah M,2026-02-16T08:13:10,neutral,true,1413,Parts backlog
+c_00501,Alex P,2026-02-16T06:35:51,positive,true,644,Parts backlog
+c_00735,Riley N,2026-02-16T04:36:49,positive,true,616,Scheduling
+c_00359,John D,2026-02-16T01:58:17,neutral,true,156,Communication
+c_00606,Alex P,2026-02-16T01:27:21,positive,true,531,Communication
+c_00017,Sarah M,2026-02-15T17:35:32,positive,true,1401,Communication
+c_00474,Alex P,2026-02-15T16:52:28,positive,true,1027,Repair delays
+c_00004,Sarah M,2026-02-15T15:28:27,positive,true,997,Repair delays
+c_00357,John D,2026-02-15T10:25:38,positive,true,202,Repair delays
+c_00777,Morgan L,2026-02-15T09:16:59,neutral,true,570,Communication
+c_00691,Riley N,2026-02-15T08:02:27,positive,true,267,Service quality
+c_00080,Sarah M,2026-02-15T03:40:31,neutral,true,631,Repair delays
+c_00275,John D,2026-02-14T23:09:19,positive,true,272,Service quality
+c_00916,Morgan L,2026-02-14T17:31:36,positive,true,1062,Parts backlog
+c_00708,Riley N,2026-02-14T12:56:35,positive,true,479,Parts backlog
+c_00613,Alex P,2026-02-14T07:48:21,neutral,true,535,Repair delays
+c_00862,Morgan L,2026-02-14T04:44:55,neutral,true,601,Parts backlog
+c_00429,Alex P,2026-02-14T02:55:55,negative,false,442,Parts backlog
+c_00392,Alex P,2026-02-14T02:23:01,neutral,true,772,Pricing
+c_00844,Morgan L,2026-02-14T02:18:51,positive,true,496,Scheduling
+c_00417,Alex P,2026-02-14T02:10:59,neutral,true,457,Pricing
+c_00558,Alex P,2026-02-13T22:53:16,positive,true,721,Pricing
+c_00738,Riley N,2026-02-13T22:04:45,positive,false,412,Communication
+c_00438,Alex P,2026-02-13T19:06:27,neutral,true,418,Repair delays
+c_00513,Alex P,2026-02-13T05:49:59,positive,true,857,Parts backlog
+c_00692,Riley N,2026-02-13T04:38:43,neutral,true,653,Parts backlog
+c_00091,Sarah M,2026-02-13T01:51:26,positive,true,830,Communication
+c_00067,Sarah M,2026-02-12T23:15:26,positive,true,1312,Scheduling
+c_00247,John D,2026-02-12T17:17:39,negative,false,177,Parts backlog
+c_00028,Sarah M,2026-02-12T15:18:21,positive,true,1148,Scheduling
+c_00753,Riley N,2026-02-12T11:14:32,negative,true,429,Service quality
+c_00272,John D,2026-02-12T07:40:44,positive,true,219,Scheduling
+c_00725,Riley N,2026-02-12T06:55:25,positive,true,526,Pricing
+c_00172,Sarah M,2026-02-12T02:36:55,negative,false,1615,Repair delays
+c_00800,Morgan L,2026-02-11T21:46:55,positive,true,1011,Pricing
+c_00214,John D,2026-02-11T15:56:38,positive,true,330,Repair delays
+c_00160,Sarah M,2026-02-11T13:18:30,positive,false,1024,Parts backlog
+c_00248,John D,2026-02-11T10:53:03,neutral,true,368,Communication
+c_00710,Riley N,2026-02-11T05:28:54,positive,true,650,Parts backlog
+c_00857,Morgan L,2026-02-11T04:16:41,positive,true,841,Communication
+c_00565,Alex P,2026-02-11T03:32:12,negative,false,1118,Parts backlog
+c_00648,Riley N,2026-02-10T16:42:34,positive,true,835,Repair delays
+c_00516,Alex P,2026-02-10T09:52:02,positive,true,819,Parts backlog
+c_00454,Alex P,2026-02-10T09:05:44,neutral,true,739,Pricing
+c_00280,John D,2026-02-10T08:12:32,positive,true,228,Communication
+c_00127,Sarah M,2026-02-10T05:30:03,positive,false,1012,Parts backlog
+c_00234,John D,2026-02-10T05:24:37,neutral,true,328,Pricing
+c_00108,Sarah M,2026-02-10T04:06:38,positive,true,1017,Parts backlog
+c_00899,Morgan L,2026-02-09T23:56:04,positive,true,237,Scheduling
+c_00492,Alex P,2026-02-09T16:08:03,positive,true,578,Repair delays
+c_00020,Sarah M,2026-02-09T14:29:40,negative,true,897,Communication
+c_00828,Morgan L,2026-02-09T12:50:19,negative,true,608,Repair delays
+c_00039,Sarah M,2026-02-09T08:30:27,neutral,true,1800,Scheduling
+c_00081,Sarah M,2026-02-09T01:44:02,positive,true,1181,Scheduling
+c_00895,Morgan L,2026-02-08T23:41:23,positive,true,436,Scheduling
+c_00315,John D,2026-02-08T23:16:45,neutral,true,149,Scheduling
+c_00260,John D,2026-02-08T22:41:47,neutral,true,194,Scheduling
+c_00774,Morgan L,2026-02-08T22:18:44,neutral,true,706,Pricing
+c_00610,Alex P,2026-02-08T20:33:46,negative,true,701,Parts backlog
+c_00841,Morgan L,2026-02-08T15:12:26,positive,true,407,Pricing
+c_00014,Sarah M,2026-02-08T14:35:44,positive,true,500,Communication
+c_00342,John D,2026-02-08T14:18:13,neutral,false,307,Service quality
+c_00006,Sarah M,2026-02-08T11:55:30,neutral,true,438,Scheduling
+c_00325,John D,2026-02-08T10:48:46,positive,true,375,Service quality
+c_00105,Sarah M,2026-02-08T10:27:34,positive,true,927,Service quality
+c_00220,John D,2026-02-08T10:23:24,neutral,true,191,Communication
+c_00222,John D,2026-02-08T08:47:35,neutral,true,410,Scheduling
+c_00526,Alex P,2026-02-08T04:36:29,negative,true,308,Parts backlog
+c_00898,Morgan L,2026-02-08T02:57:59,positive,true,528,Communication
+c_00422,Alex P,2026-02-08T01:41:05,positive,true,704,Communication
+c_00437,Alex P,2026-02-07T23:40:18,positive,true,591,Service quality
+c_00517,Alex P,2026-02-07T17:38:55,positive,true,623,Service quality
+c_00811,Morgan L,2026-02-07T16:04:26,positive,true,1118,Pricing
+c_00632,Riley N,2026-02-07T13:18:39,negative,true,787,Communication
+c_00267,John D,2026-02-07T11:42:02,positive,true,183,Pricing
+c_00291,John D,2026-02-07T06:03:36,positive,true,330,Scheduling
+c_00381,John D,2026-02-07T05:15:50,neutral,true,503,Parts backlog
+c_00679,Riley N,2026-02-07T03:44:19,positive,true,470,Parts backlog
+c_00341,John D,2026-02-06T19:51:55,neutral,true,370,Service quality
+c_00836,Morgan L,2026-02-06T19:41:11,positive,true,950,Parts backlog
+c_00132,Sarah M,2026-02-06T16:42:33,neutral,true,659,Repair delays
+c_00264,John D,2026-02-06T10:00:43,negative,false,220,Pricing
+c_00096,Sarah M,2026-02-06T09:12:41,negative,true,1414,Parts backlog
+c_00309,John D,2026-02-06T07:54:23,positive,true,367,Pricing
+c_00062,Sarah M,2026-02-06T07:25:32,neutral,true,862,Pricing
+c_00500,Alex P,2026-02-06T02:25:04,neutral,true,722,Service quality
+c_00358,John D,2026-02-06T00:59:20,negative,false,384,Service quality
+c_00608,Alex P,2026-02-06T00:17:49,positive,true,511,Repair delays
+c_00334,John D,2026-02-05T23:26:18,neutral,false,97,Communication
+c_00793,Morgan L,2026-02-05T19:47:40,positive,true,817,Repair delays
+c_00270,John D,2026-02-05T18:47:50,neutral,true,229,Service quality
+c_00820,Morgan L,2026-02-05T10:04:42,positive,true,722,Service quality
+c_00335,John D,2026-02-05T08:04:45,positive,true,274,Parts backlog
+c_00909,Morgan L,2026-02-05T08:01:18,positive,true,601,Repair delays
+c_00434,Alex P,2026-02-05T05:55:19,negative,true,574,Repair delays
+c_00783,Morgan L,2026-02-05T04:09:56,positive,true,863,Parts backlog
+c_00802,Morgan L,2026-02-05T01:42:23,neutral,true,368,Scheduling
+c_00349,John D,2026-02-04T20:30:39,neutral,true,422,Communication
+c_00331,John D,2026-02-04T16:19:44,neutral,true,489,Scheduling
+c_00927,Morgan L,2026-02-04T16:11:38,neutral,true,582,Communication
+c_00554,Alex P,2026-02-04T14:25:06,positive,true,700,Repair delays
+c_00532,Alex P,2026-02-04T13:30:31,positive,true,422,Pricing
+c_00038,Sarah M,2026-02-04T05:42:26,positive,true,322,Parts backlog
+c_00732,Riley N,2026-02-04T04:15:46,neutral,true,632,Pricing
+c_00598,Alex P,2026-02-04T03:56:11,negative,true,357,Parts backlog
+c_00763,Riley N,2026-02-04T02:51:23,positive,true,598,Pricing
+c_00206,Sarah M,2026-02-04T01:50:05,positive,true,668,Scheduling
+c_00659,Riley N,2026-02-03T22:22:27,neutral,true,666,Service quality
+c_00869,Morgan L,2026-02-03T21:56:03,neutral,true,605,Service quality
+c_00150,Sarah M,2026-02-03T15:48:20,positive,true,775,Pricing
+c_00031,Sarah M,2026-02-03T10:48:17,positive,true,1458,Scheduling
+c_00040,Sarah M,2026-02-03T04:56:49,positive,true,684,Service quality
+c_00545,Alex P,2026-02-03T02:29:01,positive,true,601,Service quality
+c_00834,Morgan L,2026-02-02T13:51:21,neutral,true,501,Repair delays
+c_00876,Morgan L,2026-02-02T13:44:51,positive,true,519,Pricing
+c_00196,Sarah M,2026-02-02T12:10:54,positive,true,990,Pricing
+c_00386,John D,2026-02-02T10:39:32,neutral,true,456,Pricing
+c_00112,Sarah M,2026-02-02T09:36:25,positive,true,858,Service quality
+c_00646,Riley N,2026-02-02T05:45:16,positive,true,312,Communication
+c_00137,Sarah M,2026-02-02T05:23:31,positive,true,1514,Parts backlog
+c_00808,Morgan L,2026-02-02T04:07:57,positive,false,569,Repair delays
+c_00510,Alex P,2026-02-02T03:58:46,neutral,true,646,Pricing
+c_00016,Sarah M,2026-02-01T21:02:59,negative,false,1470,Communication
+c_00227,John D,2026-02-01T18:14:52,positive,true,185,Service quality
+c_00451,Alex P,2026-02-01T12:40:22,positive,true,1065,Scheduling
+c_00415,Alex P,2026-02-01T10:23:36,positive,true,840,Parts backlog
+c_00169,Sarah M,2026-02-01T06:05:00,neutral,true,965,Pricing
+c_00307,John D,2026-02-01T03:05:12,negative,true,356,Pricing
+c_00908,Morgan L,2026-02-01T01:53:15,positive,false,850,Scheduling
+c_00529,Alex P,2026-01-31T19:59:48,positive,true,537,Parts backlog
+c_00423,Alex P,2026-01-31T18:04:43,negative,false,580,Parts backlog
+c_00483,Alex P,2026-01-31T16:46:36,positive,true,896,Repair delays
+c_00877,Morgan L,2026-01-31T08:59:56,positive,true,989,Communication
+c_00570,Alex P,2026-01-31T05:02:16,positive,true,794,Communication
+c_00716,Riley N,2026-01-31T04:43:52,negative,false,1036,Communication
+c_00296,John D,2026-01-31T02:50:22,positive,true,439,Scheduling
+c_00661,Riley N,2026-01-30T19:40:36,positive,true,334,Service quality
+c_00658,Riley N,2026-01-30T19:16:09,positive,true,941,Scheduling
+c_00645,Riley N,2026-01-30T12:53:04,neutral,true,522,Repair delays
+c_00487,Alex P,2026-01-30T08:01:25,neutral,true,680,Communication
+c_00925,Morgan L,2026-01-30T07:39:19,neutral,true,1135,Parts backlog
+c_00232,John D,2026-01-30T05:53:34,positive,true,357,Scheduling
+c_00022,Sarah M,2026-01-30T03:07:11,positive,true,473,Scheduling
+c_00021,Sarah M,2026-01-30T03:01:55,neutral,true,135,Service quality
+c_00147,Sarah M,2026-01-30T00:25:33,positive,true,967,Communication
+c_00314,John D,2026-01-29T20:19:02,positive,false,310,Scheduling
+c_00733,Riley N,2026-01-29T12:28:36,neutral,true,219,Communication
+c_00489,Alex P,2026-01-29T10:08:51,neutral,true,531,Parts backlog
+c_00626,Alex P,2026-01-29T08:50:32,positive,true,785,Pricing
+c_00355,John D,2026-01-29T01:05:31,positive,true,373,Service quality
+c_00689,Riley N,2026-01-28T22:04:38,positive,true,790,Scheduling
+c_00717,Riley N,2026-01-28T20:56:58,positive,true,425,Scheduling
+c_00140,Sarah M,2026-01-28T18:48:28,positive,true,963,Scheduling
+c_00585,Alex P,2026-01-28T15:40:09,positive,true,635,Communication
+c_00344,John D,2026-01-28T15:37:06,positive,true,495,Pricing
+c_00503,Alex P,2026-01-28T13:19:07,neutral,true,590,Communication
+c_00730,Riley N,2026-01-28T09:16:48,positive,true,825,Service quality
+c_00723,Riley N,2026-01-28T09:10:35,neutral,true,338,Communication
+c_00781,Morgan L,2026-01-28T07:34:23,positive,true,735,Parts backlog
+c_00494,Alex P,2026-01-28T06:34:01,neutral,true,952,Parts backlog
+c_00293,John D,2026-01-28T02:28:09,positive,true,338,Service quality
+c_00754,Riley N,2026-01-28T02:13:51,positive,true,409,Pricing
+c_00430,Alex P,2026-01-27T23:13:38,neutral,true,471,Service quality
+c_00511,Alex P,2026-01-27T18:44:48,neutral,true,730,Service quality
+c_00596,Alex P,2026-01-27T14:39:06,positive,true,307,Parts backlog
+c_00752,Riley N,2026-01-27T12:56:18,neutral,true,556,Communication
+c_00815,Morgan L,2026-01-27T12:18:57,positive,true,775,Parts backlog
+c_00369,John D,2026-01-27T11:47:39,positive,true,451,Scheduling
+c_00721,Riley N,2026-01-27T11:13:35,positive,true,520,Scheduling
+c_00124,Sarah M,2026-01-27T05:38:08,neutral,true,756,Scheduling
+c_00568,Alex P,2026-01-27T05:35:25,positive,true,170,Communication
+c_00496,Alex P,2026-01-26T23:39:45,negative,true,574,Parts backlog
+c_00242,John D,2026-01-26T11:49:46,neutral,true,462,Pricing
+c_00393,Alex P,2026-01-26T11:32:15,positive,true,737,Repair delays
+c_00216,John D,2026-01-26T09:18:33,positive,true,347,Parts backlog
+c_00917,Morgan L,2026-01-26T08:45:23,positive,true,1049,Repair delays
+c_00397,Alex P,2026-01-26T03:36:00,positive,true,489,Service quality
+c_00018,Sarah M,2026-01-25T23:08:55,positive,true,1004,Scheduling
+c_00391,Alex P,2026-01-25T21:44:06,positive,true,610,Scheduling
+c_00174,Sarah M,2026-01-25T15:02:56,positive,true,1821,Parts backlog
+c_00042,Sarah M,2026-01-25T13:46:23,neutral,true,1269,Service quality
+c_00827,Morgan L,2026-01-25T13:43:13,positive,true,563,Parts backlog
+c_00317,John D,2026-01-25T08:07:00,positive,true,463,Repair delays
+c_00025,Sarah M,2026-01-25T06:24:34,positive,true,1357,Scheduling
+c_00690,Riley N,2026-01-25T04:04:51,negative,false,391,Scheduling
+c_00614,Alex P,2026-01-25T01:23:34,positive,false,460,Pricing
+c_00799,Morgan L,2026-01-25T01:23:09,positive,true,486,Repair delays
+c_00668,Riley N,2026-01-25T00:49:58,neutral,true,499,Pricing
+c_00425,Alex P,2026-01-24T22:40:03,neutral,true,643,Scheduling
+c_00035,Sarah M,2026-01-24T13:43:39,positive,true,915,Pricing
+c_00353,John D,2026-01-24T11:58:57,positive,true,317,Repair delays
+c_00896,Morgan L,2026-01-24T06:20:54,neutral,true,383,Repair delays
+c_00830,Morgan L,2026-01-24T01:16:51,positive,true,733,Parts backlog
+c_00798,Morgan L,2026-01-23T23:44:16,positive,true,516,Scheduling
+c_00797,Morgan L,2026-01-23T17:41:43,positive,true,476,Service quality
+c_00158,Sarah M,2026-01-23T15:40:58,negative,false,529,Service quality
+c_00387,John D,2026-01-23T10:27:33,neutral,true,476,Repair delays
+c_00881,Morgan L,2026-01-23T10:00:28,neutral,true,1022,Service quality
+c_00825,Morgan L,2026-01-23T07:40:34,positive,true,743,Parts backlog
+c_00714,Riley N,2026-01-23T04:14:58,positive,true,646,Scheduling
+c_00531,Alex P,2026-01-23T03:22:35,neutral,true,465,Parts backlog
+c_00263,John D,2026-01-23T01:23:40,neutral,true,343,Communication
+c_00722,Riley N,2026-01-23T00:08:42,positive,true,212,Repair delays
+c_00001,Sarah M,2026-01-22T19:24:28,negative,false,1659,Repair delays
+c_00056,Sarah M,2026-01-22T18:21:54,negative,false,719,Repair delays
+c_00421,Alex P,2026-01-22T18:11:03,neutral,false,862,Service quality
+c_00699,Riley N,2026-01-22T17:44:23,positive,true,519,Service quality
+c_00900,Morgan L,2026-01-22T14:33:30,positive,true,858,Service quality
+c_00676,Riley N,2026-01-22T13:35:20,positive,true,608,Service quality
+c_00664,Riley N,2026-01-22T08:02:21,neutral,true,458,Scheduling
+c_00083,Sarah M,2026-01-22T07:43:54,positive,true,382,Communication
+c_00704,Riley N,2026-01-22T03:10:07,positive,true,614,Service quality
+c_00350,John D,2026-01-22T01:22:55,neutral,true,452,Service quality
+c_00842,Morgan L,2026-01-21T21:58:31,positive,true,979,Parts backlog
+c_00114,Sarah M,2026-01-21T20:00:14,neutral,true,1078,Pricing
+c_00295,John D,2026-01-21T17:53:35,positive,true,284,Repair delays
+c_00199,Sarah M,2026-01-21T15:35:30,positive,true,1406,Pricing
+c_00144,Sarah M,2026-01-21T11:19:19,positive,true,1740,Service quality
+c_00051,Sarah M,2026-01-21T06:47:28,positive,true,1213,Parts backlog
+c_00383,John D,2026-01-21T06:22:53,positive,true,426,Pricing
+c_00480,Alex P,2026-01-21T05:59:06,neutral,true,712,Service quality
+c_00252,John D,2026-01-21T00:39:11,neutral,true,395,Pricing
+c_00050,Sarah M,2026-01-21T00:21:58,neutral,true,1198,Repair delays
+c_00746,Riley N,2026-01-20T22:55:33,neutral,true,567,Pricing
+c_00930,Morgan L,2026-01-20T21:41:13,positive,true,873,Parts backlog
+c_00011,Sarah M,2026-01-20T13:25:34,positive,true,1380,Repair delays
+c_00410,Alex P,2026-01-20T13:15:42,positive,false,595,Scheduling
+c_00374,John D,2026-01-20T11:51:20,positive,true,336,Communication
+c_00238,John D,2026-01-20T08:42:11,positive,true,215,Pricing
+c_00123,Sarah M,2026-01-20T08:11:29,positive,true,1032,Pricing
+c_00760,Riley N,2026-01-20T05:35:32,positive,true,687,Scheduling
+c_00377,John D,2026-01-20T04:34:05,positive,true,548,Parts backlog
+c_00412,Alex P,2026-01-20T01:22:15,neutral,true,773,Pricing
+c_00597,Alex P,2026-01-19T16:25:13,positive,true,634,Repair delays
+c_00448,Alex P,2026-01-19T15:50:17,positive,true,263,Communication
+c_00672,Riley N,2026-01-19T14:25:35,neutral,true,564,Service quality
+c_00782,Morgan L,2026-01-19T13:14:42,positive,true,806,Parts backlog
+c_00047,Sarah M,2026-01-19T09:15:35,positive,true,940,Parts backlog
+c_00505,Alex P,2026-01-19T05:28:13,neutral,true,721,Parts backlog
+c_00401,Alex P,2026-01-19T04:45:52,neutral,true,162,Scheduling
+c_00093,Sarah M,2026-01-19T02:44:34,positive,true,913,Communication
+c_00228,John D,2026-01-19T02:16:40,neutral,true,462,Communication
+c_00188,Sarah M,2026-01-19T01:52:34,neutral,true,515,Pricing
+c_00883,Morgan L,2026-01-19T00:38:06,positive,true,700,Service quality
+c_00856,Morgan L,2026-01-19T00:18:55,positive,true,1089,Communication
+c_00103,Sarah M,2026-01-18T19:33:48,positive,true,686,Parts backlog
+c_00576,Alex P,2026-01-18T16:28:52,neutral,true,934,Repair delays
+c_00398,Alex P,2026-01-18T15:35:40,positive,true,1119,Scheduling
+c_00457,Alex P,2026-01-18T00:15:40,positive,true,817,Parts backlog
+c_00894,Morgan L,2026-01-17T15:35:33,positive,true,786,Communication
+c_00602,Alex P,2026-01-17T15:05:21,positive,true,526,Communication
+c_00681,Riley N,2026-01-17T12:07:55,positive,true,363,Scheduling
+c_00548,Alex P,2026-01-17T11:23:47,neutral,true,979,Scheduling
+c_00120,Sarah M,2026-01-17T05:40:01,positive,true,1348,Communication
+c_00630,Riley N,2026-01-17T05:15:16,positive,true,252,Repair delays
+c_00761,Riley N,2026-01-17T01:48:02,positive,true,113,Communication
+c_00759,Riley N,2026-01-17T01:44:26,negative,false,466,Communication
+c_00368,John D,2026-01-16T20:07:53,positive,true,316,Pricing
+c_00740,Riley N,2026-01-16T20:04:57,positive,true,579,Parts backlog
+c_00032,Sarah M,2026-01-16T19:39:33,neutral,true,1139,Communication
+c_00852,Morgan L,2026-01-16T19:33:44,positive,true,1144,Communication
+c_00642,Riley N,2026-01-16T17:37:16,positive,true,692,Service quality
+c_00440,Alex P,2026-01-16T14:21:50,negative,true,742,Parts backlog
+c_00320,John D,2026-01-16T13:01:43,positive,true,170,Communication
+c_00306,John D,2026-01-16T12:47:00,positive,true,494,Parts backlog
+c_00660,Riley N,2026-01-16T08:44:29,neutral,true,405,Parts backlog
+c_00149,Sarah M,2026-01-16T02:21:41,positive,true,1376,Scheduling
+c_00066,Sarah M,2026-01-15T23:15:21,positive,true,547,Parts backlog
+c_00705,Riley N,2026-01-15T23:13:42,positive,true,573,Service quality
+c_00113,Sarah M,2026-01-15T18:45:17,positive,true,1231,Service quality
+c_00667,Riley N,2026-01-15T12:55:34,neutral,true,651,Service quality
+c_00758,Riley N,2026-01-15T12:20:17,neutral,true,447,Communication
+c_00015,Sarah M,2026-01-15T09:32:23,positive,true,935,Scheduling
+c_00590,Alex P,2026-01-14T17:56:24,positive,true,635,Repair delays
+c_00400,Alex P,2026-01-14T17:12:49,negative,true,897,Parts backlog
+c_00486,Alex P,2026-01-14T15:41:16,negative,false,742,Communication
+c_00165,Sarah M,2026-01-14T14:43:03,neutral,true,1039,Communication
+c_00575,Alex P,2026-01-14T14:41:50,positive,true,922,Pricing
+c_00292,John D,2026-01-14T13:43:08,neutral,true,394,Repair delays
+c_00431,Alex P,2026-01-14T09:58:20,positive,true,850,Communication
+c_00657,Riley N,2026-01-14T08:56:29,neutral,true,656,Scheduling
+c_00129,Sarah M,2026-01-14T04:22:53,neutral,true,788,Scheduling
+c_00538,Alex P,2026-01-13T20:07:09,negative,true,952,Parts backlog
+c_00506,Alex P,2026-01-13T19:31:14,neutral,true,626,Pricing
+c_00044,Sarah M,2026-01-13T06:20:24,negative,false,824,Repair delays
+c_00914,Morgan L,2026-01-13T04:14:37,positive,true,719,Repair delays
+c_00131,Sarah M,2026-01-13T03:53:38,positive,true,1174,Repair delays
+c_00082,Sarah M,2026-01-13T01:59:28,neutral,true,1381,Communication
+c_00351,John D,2026-01-13T00:18:13,positive,true,179,Service quality
+c_00110,Sarah M,2026-01-12T22:42:59,positive,false,1224,Service quality
+c_00734,Riley N,2026-01-12T20:57:11,positive,true,633,Scheduling
+c_00701,Riley N,2026-01-12T20:23:13,positive,true,580,Pricing
+c_00680,Riley N,2026-01-12T19:20:10,negative,true,341,Communication
+c_00442,Alex P,2026-01-12T18:54:52,positive,true,501,Pricing
+c_00187,Sarah M,2026-01-12T18:05:54,positive,true,1228,Pricing
+c_00198,Sarah M,2026-01-12T16:57:08,positive,true,1534,Service quality
+c_00133,Sarah M,2026-01-12T13:56:50,negative,false,1078,Repair delays
+c_00741,Riley N,2026-01-12T12:45:21,positive,true,894,Service quality
+c_00736,Riley N,2026-01-12T05:39:55,negative,true,450,Communication
+c_00600,Alex P,2026-01-12T04:38:32,positive,true,937,Parts backlog
+c_00562,Alex P,2026-01-12T03:47:35,positive,true,233,Communication
+c_00205,Sarah M,2026-01-12T02:53:11,positive,true,655,Pricing
+c_00663,Riley N,2026-01-11T17:01:58,neutral,true,568,Service quality
+c_00650,Riley N,2026-01-11T09:12:32,positive,true,297,Communication
+c_00379,John D,2026-01-11T08:17:05,positive,true,158,Parts backlog
+c_00785,Morgan L,2026-01-11T02:48:41,positive,true,925,Pricing
+c_00170,Sarah M,2026-01-10T19:52:20,positive,true,1077,Service quality
+c_00893,Morgan L,2026-01-10T15:50:28,positive,true,964,Scheduling
+c_00579,Alex P,2026-01-10T12:27:40,positive,true,875,Parts backlog
+c_00143,Sarah M,2026-01-10T11:27:09,neutral,true,797,Repair delays
+c_00921,Morgan L,2026-01-10T08:57:48,positive,true,440,Repair delays
+c_00236,John D,2026-01-10T07:06:03,positive,true,268,Scheduling
+c_00456,Alex P,2026-01-10T04:58:26,positive,true,703,Repair delays
+c_00323,John D,2026-01-09T23:18:21,neutral,true,402,Repair delays
+c_00428,Alex P,2026-01-09T17:42:51,negative,true,553,Communication
+c_00208,John D,2026-01-09T13:32:29,positive,true,259,Repair delays
+c_00787,Morgan L,2026-01-09T13:07:11,positive,true,217,Pricing
+c_00686,Riley N,2026-01-09T12:56:45,positive,false,672,Repair delays
+c_00546,Alex P,2026-01-09T12:54:32,positive,true,752,Service quality
+c_00305,John D,2026-01-09T05:08:00,neutral,true,416,Parts backlog
+c_00861,Morgan L,2026-01-09T02:14:49,positive,true,910,Parts backlog
+c_00390,Alex P,2026-01-08T23:48:42,neutral,false,417,Repair delays
+c_00892,Morgan L,2026-01-08T21:17:42,positive,true,724,Repair delays
+c_00871,Morgan L,2026-01-08T17:04:32,positive,true,804,Repair delays

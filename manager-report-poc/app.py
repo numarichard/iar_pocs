@@ -4,15 +4,23 @@ Sidebar nav:
   - Platform: render a spec (consumer side of the loop)
   - Feature:  author a spec interactively (producer side of the loop)
 
-Spec uses `id`, `display_name`, `description`, `grain`, and `columns` —
-`columns` is the output projection of the table view (distinct from
-pivot/peer-group axes, which would have a different name).
+Schema versions
+---------------
+v1 (legacy): spec lists output columns, source is already at display grain.
+v2:          spec lists output columns + per-column `aggregation`, declares a
+             `period` window, and source is raw event-grain data. The renderer
+             windows by `period.field`, groups by `grain`, applies each
+             column's aggregation, and formats the result by column `type`.
+
+The Feature (authoring) view supports v1 only; loading a v2 spec puts that
+view in read-only mode so aggregation metadata survives the round-trip.
 """
 
 from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any
 
 import pandas as pd
 import streamlit as st
@@ -32,7 +40,7 @@ GRAIN_OPTIONS = [
 
 COLUMN_TYPES = ["string", "integer", "float", "datetime", "boolean"]
 VIZ_TYPES = ["table"]
-SCHEMA_VERSION = 1
+FEATURE_AUTHORING_SCHEMA_VERSION = 1
 
 
 # ---------- Loaders ----------
@@ -64,21 +72,148 @@ def apply_sort(df: pd.DataFrame, sort_spec: list[dict] | None) -> pd.DataFrame:
     return df.sort_values(by=by, ascending=ascending)
 
 
-# ---------- Platform view ----------
+# ---------- v2 aggregation engine ----------
 
-def render_platform() -> None:
-    st.header("Platform — render a spec")
-    st.caption(
-        f"Consumer side of the loop. Reads `{CONFIG_PATH.name}` from disk — "
-        "edits saved in the Feature view show up here."
+def _coerce_for_compare(series: pd.Series, value: Any) -> tuple[pd.Series, Any]:
+    """Make CSV-loaded series comparable to YAML-loaded scalar.
+
+    YAML booleans come in as Python bools; the CSV column is "true"/"false"
+    strings unless we coerce. Same defensiveness for numbers.
+    """
+    if isinstance(value, bool):
+        if series.dtype == object:
+            return series.astype(str).str.lower(), "true" if value else "false"
+        return series, value
+    return series, value
+
+
+def apply_predicate(df: pd.DataFrame, predicate: dict) -> pd.DataFrame:
+    """Filter `df` by a recursive predicate.
+
+    Supported shapes:
+      {column: <c>, equals: <v>}
+      {all: [<predicate>, ...]}   (logical AND)
+    """
+    if "all" in predicate:
+        result = df
+        for sub in predicate["all"]:
+            result = apply_predicate(result, sub)
+        return result
+    if "column" in predicate and "equals" in predicate:
+        col = predicate["column"]
+        if col not in df.columns:
+            return df.iloc[0:0]
+        series, val = _coerce_for_compare(df[col], predicate["equals"])
+        return df[series == val]
+    raise ValueError(f"unsupported predicate: {predicate}")
+
+
+def _pct_where(df: pd.DataFrame, predicate: dict) -> float | None:
+    if not len(df):
+        return None
+    return len(apply_predicate(df, predicate)) / len(df) * 100
+
+
+def _trend_label(current: float | None, prior: float | None, threshold_pp: float) -> str:
+    if current is None or prior is None:
+        return "—"
+    delta = current - prior
+    if abs(delta) < threshold_pp:
+        return "Stable"
+    return "↑ Worse" if delta > 0 else "↓ Better"
+
+
+def _aggregate_group(
+    rows: pd.DataFrame,
+    prior_rows: pd.DataFrame,
+    columns: list[dict],
+    trend_threshold_pp: float,
+) -> dict[str, Any]:
+    out: dict[str, Any] = {}
+    for col in columns:
+        cid = col["id"]
+        agg = col.get("aggregation") or {}
+        t = agg.get("type")
+
+        if t == "group_key":
+            continue
+        elif t == "count":
+            out[cid] = len(rows)
+        elif t == "count_where":
+            out[cid] = len(apply_predicate(rows, agg["where"]))
+        elif t == "pct_where":
+            out[cid] = _pct_where(rows, agg["where"]) or 0
+        elif t == "trend_pct_where":
+            cur = _pct_where(rows, agg["where"])
+            pri = _pct_where(prior_rows, agg["where"]) if prior_rows is not None else None
+            out[cid] = _trend_label(cur, pri, trend_threshold_pp)
+        elif t == "avg":
+            vals = pd.to_numeric(rows[agg["column"]], errors="coerce").dropna()
+            mean = float(vals.mean()) if len(vals) else 0.0
+            if agg.get("output_unit") == "minutes":
+                mean = mean / 60
+            out[cid] = mean
+        elif t == "mode":
+            scope = apply_predicate(rows, agg["where"]) if "where" in agg else rows
+            target = scope[agg["column"]] if agg["column"] in scope.columns else pd.Series(dtype=object)
+            modes = target.mode()
+            out[cid] = modes.iloc[0] if len(modes) else ""
+        else:
+            out[cid] = None
+    return out
+
+
+def _format_value(value: Any, col_type: str) -> Any:
+    if value is None or (isinstance(value, float) and pd.isna(value)):
+        return ""
+    if col_type == "percent":
+        return f"{int(round(float(value)))}%"
+    if col_type == "duration_minutes":
+        return f"{int(round(float(value)))}m"
+    if col_type == "integer":
+        try:
+            return int(round(float(value)))
+        except (TypeError, ValueError):
+            return value
+    return value
+
+
+def aggregate_v2(spec: dict, df: pd.DataFrame, period_days: int) -> pd.DataFrame:
+    """Run the v2 aggregation pipeline. Returns a DataFrame at `grain`."""
+    period_cfg = spec["period"]
+    field = period_cfg["field"]
+    threshold = float(period_cfg.get("trend_threshold_pp", 5))
+
+    df = df.copy()
+    df[field] = pd.to_datetime(df[field])
+    latest = df[field].max()
+    cutoff = latest - pd.Timedelta(days=period_days)
+    prior_cutoff = cutoff - pd.Timedelta(days=period_days)
+
+    current = df[df[field] > cutoff]
+    prior = df[(df[field] > prior_cutoff) & (df[field] <= cutoff)]
+
+    grain_col = next(
+        c["id"]
+        for c in spec["columns"]
+        if (c.get("aggregation") or {}).get("type") == "group_key"
     )
 
-    try:
-        spec = load_config()
-    except FileNotFoundError:
-        st.error(f"No spec at {CONFIG_PATH}.")
-        return
+    rows: list[dict] = []
+    for name, group in current.groupby(grain_col, sort=False):
+        prior_group = prior[prior[grain_col] == name]
+        agg_row = _aggregate_group(group, prior_group, spec["columns"], threshold)
+        agg_row[grain_col] = name
+        rows.append(agg_row)
 
+    if not rows:
+        return pd.DataFrame(columns=[c["id"] for c in spec["columns"]])
+    return pd.DataFrame(rows)[[c["id"] for c in spec["columns"]]]
+
+
+# ---------- Platform view ----------
+
+def _render_metadata(spec: dict) -> None:
     st.markdown(f"### {spec.get('display_name') or spec.get('id', 'Untitled')}")
     if desc := spec.get("description"):
         st.caption(desc)
@@ -93,6 +228,22 @@ def render_platform() -> None:
     if meta:
         st.caption(" · ".join(meta))
 
+
+def render_platform() -> None:
+    st.header("Platform — render a spec")
+    st.caption(
+        f"Consumer side of the loop. Reads `{CONFIG_PATH.name}` from disk — "
+        "edits saved in the Feature view show up here."
+    )
+
+    try:
+        spec = load_config()
+    except FileNotFoundError:
+        st.error(f"No spec at {CONFIG_PATH}.")
+        return
+
+    _render_metadata(spec)
+
     spec_columns = spec.get("columns") or []
     if not spec_columns:
         st.warning("Spec has no columns. Add some in the Feature view.")
@@ -104,6 +255,18 @@ def render_platform() -> None:
         st.error(f"Could not load data source: {e}")
         return
 
+    schema_version = spec.get("schema_version", 1)
+    if schema_version >= 2 and "period" in spec:
+        _render_v2(spec, df)
+    else:
+        _render_v1(spec, df)
+
+    with st.expander("Active spec (raw)"):
+        st.code(yaml.safe_dump(spec, sort_keys=False), language="yaml")
+
+
+def _render_v1(spec: dict, df: pd.DataFrame) -> None:
+    spec_columns = spec.get("columns") or []
     spec_col_ids = [col["id"] for col in spec_columns]
     present = [c for c in spec_col_ids if c in df.columns]
     missing = [c for c in spec_col_ids if c not in df.columns]
@@ -133,8 +296,69 @@ def render_platform() -> None:
         width="stretch",
     )
 
-    with st.expander("Active spec (raw)"):
-        st.code(yaml.safe_dump(spec, sort_keys=False), language="yaml")
+
+def _render_v2(spec: dict, df: pd.DataFrame) -> None:
+    period_cfg = spec["period"]
+    field = period_cfg["field"]
+    if field not in df.columns:
+        st.error(f"Period field `{field}` not in the data source.")
+        return
+
+    options = period_cfg.get("options") or [period_cfg.get("default_days", 30)]
+    default = period_cfg.get("default_days", options[0])
+    default_idx = options.index(default) if default in options else 0
+
+    days = st.radio(
+        "Period",
+        options,
+        index=default_idx,
+        horizontal=True,
+        format_func=lambda d: f"Last {d} days",
+        key="platform_period_days",
+    )
+
+    # As-of disclosure: trend compares this window vs the immediately prior one.
+    df_dates = pd.to_datetime(df[field])
+    latest = df_dates.max()
+    window_start = (latest - pd.Timedelta(days=days)).date()
+    st.caption(
+        f"As of {latest.date().isoformat()} · "
+        f"window {window_start.isoformat()} → {latest.date().isoformat()} · "
+        f"trend vs. prior {days}d"
+    )
+
+    try:
+        agg_df = aggregate_v2(spec, df, days)
+    except (KeyError, ValueError) as e:
+        st.error(f"Aggregation failed: {e}")
+        return
+
+    if agg_df.empty:
+        st.info("No rows in the selected window.")
+        return
+
+    sort_filtered = [s for s in (spec.get("sort") or []) if s["column"] in agg_df.columns]
+    agg_df = apply_sort(agg_df, sort_filtered)
+
+    display_df = agg_df.copy()
+    for col in spec["columns"]:
+        cid = col["id"]
+        if cid in display_df.columns:
+            ctype = col.get("type", "string")
+            display_df[cid] = display_df[cid].apply(lambda v, ct=ctype: _format_value(v, ct))
+
+    column_config = {
+        col["id"]: st.column_config.Column(label=col["display_name"])
+        for col in spec["columns"]
+        if col["id"] in display_df.columns
+    }
+
+    st.dataframe(
+        display_df,
+        column_config=column_config,
+        hide_index=True,
+        width="stretch",
+    )
 
 
 # ---------- Feature view ----------
@@ -184,7 +408,10 @@ def build_spec(
             continue
         sort.append({"column": col, "direction": row.get("direction") or "desc"})
 
-    spec: dict = {"schema_version": SCHEMA_VERSION, "viz_type": viz_type or "table"}
+    spec: dict = {
+        "schema_version": FEATURE_AUTHORING_SCHEMA_VERSION,
+        "viz_type": viz_type or "table",
+    }
     spec["id"] = (spec_id or "spec").strip()
     if display_name:
         spec["display_name"] = display_name
@@ -216,6 +443,18 @@ def render_feature() -> None:
         except FileNotFoundError:
             st.session_state["_feature_seed"] = {}
     seed = st.session_state["_feature_seed"]
+
+    seed_version = seed.get("schema_version", 1) if seed else 1
+    if seed_version > FEATURE_AUTHORING_SCHEMA_VERSION:
+        st.warning(
+            f"This spec is `schema_version: {seed_version}` "
+            f"(period filters, per-column aggregation). The Feature view "
+            f"only authors v{FEATURE_AUTHORING_SCHEMA_VERSION} specs today, "
+            "so it's read-only here to avoid losing aggregation metadata. "
+            "Edit the YAML directly for now."
+        )
+        st.code(yaml.safe_dump(seed, sort_keys=False), language="yaml")
+        return
 
     # Identity
     col_a, col_b = st.columns([1, 2])

@@ -1,13 +1,8 @@
-# Field naming follows numa-metrics-registry conventions where they fit:
-#   schema_version, id, display_name, description, grain.
-# `columns` is local to table-view specs (not the registry's `dimensions`,
-# which are pivot/peer-group axes — different concept).
-
 schema_version: 1
 viz_type: table
 id: advisor_attention
-display_name: "LiveCSI Manager Report"
-description: "Per-advisor signal for service manager weekly review (POC, mock data)"
+display_name: "Advisor Attention"
+description: "Per-advisor signal for weekly review (POC, mock data)"
 grain: service_advisor
 
 source:

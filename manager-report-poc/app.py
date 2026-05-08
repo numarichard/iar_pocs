@@ -4,10 +4,9 @@ Sidebar nav:
   - Platform: render a spec (consumer side of the loop)
   - Feature:  author a spec interactively (producer side of the loop)
 
-Spec field naming follows numa-metrics-registry conventions where they fit:
-  schema_version, id, display_name, description, grain. The registry's
-  `dimensions` term means pivot axes (e.g. rooftop_id) — distinct from the
-  output `columns` of a table view, so we keep `columns` here.
+Spec uses `id`, `display_name`, `description`, `grain`, and `columns` —
+`columns` is the output projection of the table view (distinct from
+pivot/peer-group axes, which would have a different name).
 """
 
 from __future__ import annotations
@@ -42,6 +41,17 @@ def load_config() -> dict:
     return yaml.safe_load(CONFIG_PATH.read_text())
 
 
+def save_config_if_changed(spec: dict) -> bool:
+    """Write spec to disk only if it differs semantically from what's there.
+    Keeps comments intact until the first real edit.
+    """
+    on_disk = load_config() if CONFIG_PATH.exists() else None
+    if on_disk == spec:
+        return False
+    CONFIG_PATH.write_text(yaml.safe_dump(spec, sort_keys=False))
+    return True
+
+
 def load_dataframe(source: dict) -> pd.DataFrame:
     return pd.read_csv(POC_ROOT / source["path"])
 
@@ -59,18 +69,17 @@ def apply_sort(df: pd.DataFrame, sort_spec: list[dict] | None) -> pd.DataFrame:
 def render_platform() -> None:
     st.header("Platform — render a spec")
     st.caption(
-        "Consumer side of the loop. Loads `config/advisor_attention.yaml`, "
-        "applies sort, renders the table — what the in-app reporting platform "
-        "will eventually do."
+        f"Consumer side of the loop. Reads `{CONFIG_PATH.name}` from disk — "
+        "edits saved in the Feature view show up here."
     )
 
     try:
         spec = load_config()
     except FileNotFoundError:
-        st.error(f"No spec at {CONFIG_PATH}")
+        st.error(f"No spec at {CONFIG_PATH}.")
         return
 
-    st.markdown(f"### {spec.get('display_name', spec['id'])}")
+    st.markdown(f"### {spec.get('display_name') or spec.get('id', 'Untitled')}")
     if desc := spec.get("description"):
         st.caption(desc)
 
@@ -84,23 +93,47 @@ def render_platform() -> None:
     if meta:
         st.caption(" · ".join(meta))
 
-    df = load_dataframe(spec["source"])
-    df = apply_sort(df, spec.get("sort"))
+    spec_columns = spec.get("columns") or []
+    if not spec_columns:
+        st.warning("Spec has no columns. Add some in the Feature view.")
+        return
 
-    columns_in_order = [col["id"] for col in spec["columns"]]
+    try:
+        df = load_dataframe(spec["source"])
+    except (FileNotFoundError, KeyError) as e:
+        st.error(f"Could not load data source: {e}")
+        return
+
+    spec_col_ids = [col["id"] for col in spec_columns]
+    present = [c for c in spec_col_ids if c in df.columns]
+    missing = [c for c in spec_col_ids if c not in df.columns]
+    if missing:
+        st.warning(
+            "Columns referenced by the spec but not in the data: "
+            + ", ".join(f"`{c}`" for c in missing)
+            + ". Rename them to match the CSV, or update the data source."
+        )
+    if not present:
+        st.error("No spec columns match data columns. Check column IDs against the CSV.")
+        return
+
+    sort_filtered = [s for s in (spec.get("sort") or []) if s["column"] in df.columns]
+    df = apply_sort(df, sort_filtered)
+
     column_config = {
         col["id"]: st.column_config.Column(label=col["display_name"])
-        for col in spec["columns"]
+        for col in spec_columns
+        if col["id"] in df.columns
     }
 
     st.dataframe(
-        df[columns_in_order],
+        df[present],
         column_config=column_config,
         hide_index=True,
         use_container_width=True,
     )
 
-    with st.expander("Loaded spec (raw)"):
+    with st.expander("Active spec (raw)"):
         st.code(yaml.safe_dump(spec, sort_keys=False), language="yaml")
 
 
@@ -170,15 +203,19 @@ def build_spec(
 def render_feature() -> None:
     st.header("Feature — author a spec")
     st.caption(
-        "Producer side of the loop. Pick the row entity, columns, sort, viz type — "
-        "the spec is generated live below. Download the YAML and drop it in `config/` to "
-        "render via the Platform view."
+        f"Producer side of the loop. Edits are saved to `{CONFIG_PATH.name}` "
+        "automatically. The Platform view renders the latest saved spec."
     )
 
-    try:
-        seed = load_config()
-    except FileNotFoundError:
-        seed = {}
+    # Cache the on-disk spec as a stable seed for the whole session.
+    # Stable seed = data_editor's cached edits track correctly; auto-write
+    # doesn't shift the base out from under user edits.
+    if "_feature_seed" not in st.session_state:
+        try:
+            st.session_state["_feature_seed"] = load_config()
+        except FileNotFoundError:
+            st.session_state["_feature_seed"] = {}
+    seed = st.session_state["_feature_seed"]
 
     # Identity
     col_a, col_b = st.columns([1, 2])
@@ -187,37 +224,48 @@ def render_feature() -> None:
             "ID (slug)",
             value=seed.get("id", "advisor_attention"),
             help="snake_case identifier",
+            key="w_spec_id",
         )
     with col_b:
         display_name = st.text_input(
-            "Display name", value=seed.get("display_name", "")
+            "Display name",
+            value=seed.get("display_name", ""),
+            key="w_display_name",
         )
 
     description = st.text_area(
-        "Description", value=seed.get("description", ""), height=70
+        "Description",
+        value=seed.get("description", ""),
+        height=70,
+        key="w_description",
     )
 
     # Grain + viz type
     col_grain, col_viz = st.columns(2)
     with col_grain:
         seed_grain = seed.get("grain", "service_advisor")
-        if seed_grain in GRAIN_OPTIONS:
-            choice = st.selectbox(
-                "Grain (row entity)",
-                GRAIN_OPTIONS,
-                index=GRAIN_OPTIONS.index(seed_grain),
-                help="What does each row represent? (registry term: `grain`)",
-            )
-            grain = (
-                st.text_input("Custom grain", value="") if choice == "(custom)" else choice
+        seed_in_options = seed_grain in GRAIN_OPTIONS
+        default_index = (
+            GRAIN_OPTIONS.index(seed_grain)
+            if seed_in_options
+            else GRAIN_OPTIONS.index("(custom)")
+        )
+        grain_choice = st.selectbox(
+            "Grain (row entity)",
+            GRAIN_OPTIONS,
+            index=default_index,
+            help="What does each row represent?",
+            key="w_grain_choice",
+        )
+        if grain_choice == "(custom)":
+            custom_default = seed_grain if seed_grain and not seed_in_options else ""
+            grain = st.text_input(
+                "Custom grain",
+                value=custom_default,
+                key="w_grain_custom",
             )
         else:
-            st.selectbox(
-                "Grain (row entity)",
-                GRAIN_OPTIONS,
-                index=GRAIN_OPTIONS.index("(custom)"),
-            )
-            grain = st.text_input("Custom grain", value=seed_grain)
+            grain = grain_choice
 
     with col_viz:
         viz_type = st.radio(
@@ -226,6 +274,7 @@ def render_feature() -> None:
             index=0,
             horizontal=True,
             help="Today: table. Chart / KPI / etc. come later.",
+            key="w_viz_type",
         )
 
     # Source
@@ -236,6 +285,7 @@ def render_feature() -> None:
         "Data source CSV (path relative to POC root)",
         value=source_default,
         help="The renderer reads this file at runtime.",
+        key="w_source_path",
     )
 
     # Columns
@@ -279,7 +329,7 @@ def render_feature() -> None:
         key="sort_editor",
     )
 
-    # Build + preview
+    # Build the spec from current widget state
     spec = build_spec(
         spec_id=spec_id,
         display_name=display_name,
@@ -291,8 +341,12 @@ def render_feature() -> None:
         sort_df=sort_df,
     )
 
+    # Persist to disk if it changed
+    wrote = save_config_if_changed(spec)
+
     st.divider()
-    st.markdown("**Generated spec** (live)")
+    save_caption = f"Saved to `{CONFIG_PATH.name}`" if wrote else f"In sync with `{CONFIG_PATH.name}`"
+    st.markdown(f"**Generated spec** — {save_caption}")
     yaml_str = yaml.safe_dump(spec, sort_keys=False)
     fmt_yaml, fmt_json = st.tabs(["YAML", "JSON"])
     with fmt_yaml:
@@ -312,7 +366,7 @@ def render_feature() -> None:
 
 def render_sidebar() -> str:
     with st.sidebar:
-        st.markdown("# LiveCSI Manager Report POC")
+        st.markdown("# Table View POC")
         st.caption("Author and render report-definition specs.")
         page = st.radio(
             "View",
@@ -320,18 +374,11 @@ def render_sidebar() -> str:
             captions=["Render a spec", "Author a spec"],
             label_visibility="collapsed",
         )
-        st.divider()
-        st.caption(
-            "Field naming follows numa-metrics-registry conventions "
-            "(`schema_version`, `id`, `display_name`, `grain`) where they fit. "
-            "Scaled-back POC — does not model the full registry shape "
-            "(`domain`, `owner_team`, `lifecycle`, `lineage`, etc.)."
-        )
     return page
 
 
 def main() -> None:
-    st.set_page_config(page_title="LiveCSI Manager Report POC", layout="wide")
+    st.set_page_config(page_title="Table View POC", layout="wide")
     page = render_sidebar()
     if page == "Platform":
         render_platform()

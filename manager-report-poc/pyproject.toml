@@ -1,7 +1,7 @@
 [project]
-name = "iar-poc-livecsi-table"
+name = "table-view-poc"
 version = "0.1.0"
-description = "POC: yaml-driven table view (LiveCSI manager report context)"
+description = "POC: yaml-driven table view"
 requires-python = ">=3.12"
 dependencies = [
     "pandas>=2.0",
